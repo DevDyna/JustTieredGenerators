@@ -1,0 +1,8 @@
+{
+  "block.justtieredgens.blazegold_coal_generator": "Blazegold Coal Generator",
+  "justtieredgens.configuration.blazegold_coal_generator": "Blazegold Coal Generator",
+  "justtieredgens.configuration.blazegold_coal_generator_burn_speed_multiplier": "Multiplier to increase generator speed value",
+  "justtieredgens.configuration.blazegold_coal_generator_fe_per_fuel_tick": "FE created per burn tick of fuel",
+  "justtieredgens.configuration.blazegold_coal_generator_fe_per_tick": "FE transfer every tick",
+  "justtieredgens.configuration.blazegold_coal_generator_max_fe": "Max FE energy storage"
+}
