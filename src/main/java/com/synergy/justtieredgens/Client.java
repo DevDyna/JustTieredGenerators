@@ -1,15 +1,15 @@
 package com.synergy.justtieredgens;
 
-import net.minecraft.world.item.crafting.RecipeMap;
+import com.synergy.justtieredgens.init.builders.generators.blazegold.SolidBlazeGoldGenScreen;
+import com.synergy.justtieredgens.init.types.zContainers;
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -26,23 +26,9 @@ public class Client {
 
     }
 
-    // Recipe collector client-side
-
-    private static RecipeMap recipeCollector = RecipeMap.EMPTY;
-
     @SubscribeEvent
-    public static void onRecipesSynced(RecipesReceivedEvent event) {
-        if (ModList.get().isLoaded("jei"))
-            recipeCollector = event.getRecipeMap();
-    }
-
-    @SubscribeEvent
-    public static void onClientLogout(ClientPlayerNetworkEvent.LoggingOut event) {
-        recipeCollector = RecipeMap.EMPTY;
-    }
-
-    public static RecipeMap getRecipeCollector() {
-        return recipeCollector;
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(zContainers.BLAZEGOLD_COAL.get(), SolidBlazeGoldGenScreen::new);
     }
 
 }

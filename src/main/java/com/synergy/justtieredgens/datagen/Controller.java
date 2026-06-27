@@ -6,13 +6,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-import com.devdyna.cakesticklib.CakeStickLib;
 import com.synergy.justtieredgens.datagen.client.*;
 import com.synergy.justtieredgens.datagen.server.*;
-import com.synergy.justtieredgens.datagen.server.DataAdvancement.DataAdvancementGenerator;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.*;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -39,13 +36,7 @@ public class Controller {
 
         // server
 
-        e.addProvider(new DataAdvancement(output, provider, List.of(new DataAdvancementGenerator())));
-
-        e.addProvider(new DataBiomeTag(output, provider));
-        e.addProvider(new DataEntityTag(output, provider));
         e.addProvider(new DataFluidTag(output, provider));
-        e.addProvider(new DataMaps(output, provider));
-        e.addProvider(new DataWorldgen(output, provider));
 
         e.createBlockAndItemTags(DataBlockTag::new, DataItemTag::new);
 

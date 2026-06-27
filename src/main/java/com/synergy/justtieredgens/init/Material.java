@@ -9,7 +9,7 @@ public class Material {
                 zItems.register(bus);
                 zBlocks.register(bus);
                 zBlockEntities.register(bus);
-                zRecipeTypes.register(bus);
+                zContainers.register(bus);
         }
 
 

@@ -2,6 +2,9 @@ package com.synergy.justtieredgens.datagen.server;
 
 import java.util.*;
 
+import com.devdyna.cakesticklib.api.utils.LootTableHelper;
+import com.synergy.justtieredgens.init.types.zBlocks;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -15,13 +18,12 @@ public class DataLootBlock extends BlockLootSubProvider {
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-
-                return List.of();//TODO
+                return LootTableHelper.getValidBlocks(zBlocks.zBlockItem);
         }
 
         @Override
         protected void generate() {
-
+                zBlocks.zBlockItem.getEntries().forEach(b->dropSelf(b.get()));
         }
 
 }
