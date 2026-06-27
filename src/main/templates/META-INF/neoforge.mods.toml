@@ -30,4 +30,9 @@ description='''${mod_description}'''
     ordering="BEFORE"
     side="BOTH"
 
-
+[[dependencies.${mod_id}]]
+    modId="justdirethings"
+    type="required"
+    versionRange="${justdirethings_version}"
+    ordering="BEFORE"
+    side="BOTH"
