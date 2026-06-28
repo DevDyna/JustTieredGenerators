@@ -22,8 +22,8 @@ public abstract class BaseCoalGenBE extends GeneratorT1BE {
     @Override
     public int getBurnSpeedMultiplier() {
         return getBurnSpeed() *
-                (com.direwolf20.justdirethings.setup.Config.GENERATOR_T1_BURN_SPEED_MULTIPLIER.get()
-                        / super.getBurnSpeedMultiplier());
+                (super.getBurnSpeedMultiplier()
+                        / com.direwolf20.justdirethings.setup.Config.GENERATOR_T1_BURN_SPEED_MULTIPLIER.get());
     }
 
 }
