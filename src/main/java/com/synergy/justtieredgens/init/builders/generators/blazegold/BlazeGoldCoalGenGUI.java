@@ -9,13 +9,13 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.Block;
 
-public class SolidBlazeGoldGenGUI extends BaseCoalGenGUI {
+public class BlazeGoldCoalGenGUI extends BaseCoalGenGUI {
 
-    public SolidBlazeGoldGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
+    public BlazeGoldCoalGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
         this(windowId, playerInventory, extraData.readBlockPos());
     }
 
-    public SolidBlazeGoldGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
+    public BlazeGoldCoalGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
         super(zContainers.BLAZEGOLD_COAL.get(), windowId, playerInventory, blockPos);
     }
 

@@ -16,6 +16,16 @@ public class Config {
     public static IntValue BLAZEGOLD_COAL_FE_PER_FUEL_TICK;
     public static IntValue BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER;
 
+    public static IntValue CELESTIGEM_COAL_MAX_FE;
+    public static IntValue CELESTIGEM_COAL_FE_PER_TICK;
+    public static IntValue CELESTIGEM_COAL_FE_PER_FUEL_TICK;
+    public static IntValue CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER;
+
+    public static IntValue ECLIPSE_ALLOY_COAL_MAX_FE;
+    public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_TICK;
+    public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK;
+    public static IntValue ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER;
+
     private static final ModConfigSpec.Builder qCOMMON = new ModConfigSpec.Builder();
 
     public static void register(ModContainer c) {
@@ -33,6 +43,38 @@ public class Config {
 
         BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                 Constants.BLAZEGOLD.COAL + "_burn_speed_multiplier", 4 * 2);
+
+        qCOMMON.pop();
+
+        qCOMMON.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
+
+        CELESTIGEM_COAL_MAX_FE = number("Max FE energy storage",
+                Constants.CELESTIGEM.COAL + "_max_fe", 1000000 * 3);
+
+        CELESTIGEM_COAL_FE_PER_TICK = number("FE transfer every tick",
+                Constants.CELESTIGEM.COAL + "_fe_per_tick", 1000 * 3);
+
+        CELESTIGEM_COAL_FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                Constants.CELESTIGEM.COAL + "_fe_per_fuel_tick", 15 * 3);
+
+        CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
+                Constants.CELESTIGEM.COAL + "_burn_speed_multiplier", 4 * 3);
+
+        qCOMMON.pop();
+
+        qCOMMON.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
+
+        ECLIPSE_ALLOY_COAL_MAX_FE = number("Max FE energy storage",
+                Constants.ECLIPSE_ALLOY.COAL + "_max_fe", 1000000 * 4);
+
+        ECLIPSE_ALLOY_COAL_FE_PER_TICK = number("FE transfer every tick",
+                Constants.ECLIPSE_ALLOY.COAL + "_fe_per_tick", 1000 * 4);
+
+        ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                Constants.ECLIPSE_ALLOY.COAL + "_fe_per_fuel_tick", 15 * 4);
+
+        ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
+                Constants.ECLIPSE_ALLOY.COAL + "_burn_speed_multiplier", 4 * 4);
 
         qCOMMON.pop();
 

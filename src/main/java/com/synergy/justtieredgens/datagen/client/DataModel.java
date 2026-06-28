@@ -12,7 +12,6 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
@@ -31,6 +30,8 @@ public class DataModel extends ModelProvider {
         protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
                 coalGenModel(blockModels, itemModels, zBlocks.BLAZEGOLD_COAL);
+                coalGenModel(blockModels, itemModels, zBlocks.CELESTIGEM_COAL);
+                coalGenModel(blockModels, itemModels, zBlocks.ECLIPSE_ALLOY_COAL);
 
         }
 
@@ -65,7 +66,7 @@ public class DataModel extends ModelProvider {
                                                                 blockmodels.modelOutput))));
 
                 itemModels.itemModelOutput.accept(b.get().asItem(),
-                                ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(b.get())));
+                                ItemModelUtils.plainModel(x.rl(MODULE_ID,"block/"+b.getId().getPath())));
 
         }
 }

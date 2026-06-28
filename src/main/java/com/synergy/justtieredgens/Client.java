@@ -1,6 +1,8 @@
 package com.synergy.justtieredgens;
 
-import com.synergy.justtieredgens.init.builders.generators.blazegold.SolidBlazeGoldGenScreen;
+import com.synergy.justtieredgens.init.builders.generators.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.generators.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.generators.eclipse_alloy.EclipseAlloyCoalGenScreen;
 import com.synergy.justtieredgens.init.types.zContainers;
 
 import net.neoforged.api.distmarker.Dist;
@@ -28,7 +30,9 @@ public class Client {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
-        event.register(zContainers.BLAZEGOLD_COAL.get(), SolidBlazeGoldGenScreen::new);
+        event.register(zContainers.BLAZEGOLD_COAL.get(), BlazeGoldCoalGenScreen::new);
+        event.register(zContainers.CELESTIGEM_COAL.get(), CelestigemCoalGenScreen::new);
+        event.register(zContainers.ECLIPSE_ALLOY_COAL.get(), EclipseAlloyCoalGenScreen::new);
     }
 
 }

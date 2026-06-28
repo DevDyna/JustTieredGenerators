@@ -5,7 +5,9 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 import java.util.function.Function;
 
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.generators.blazegold.SolidBlazeGoldGenBlock;
+import com.synergy.justtieredgens.init.builders.generators.blazegold.BlazeGoldCoalGenBlock;
+import com.synergy.justtieredgens.init.builders.generators.celestigem.CelestigemCoalGenBlock;
+import com.synergy.justtieredgens.init.builders.generators.eclipse_alloy.EclipseAlloyCoalGenBlock;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,8 +23,11 @@ public class zBlocks {
 
     public static final DeferredRegister.Blocks zBlockItem = DeferredRegister.createBlocks(MODULE_ID);
 
-    public static final DeferredHolder<Block, Block> BLAZEGOLD_COAL = registerItemBlock(Constants.BLAZEGOLD.COAL,
-            p -> new SolidBlazeGoldGenBlock(p));
+    public static final DeferredHolder<Block, Block> BLAZEGOLD_COAL = registerItemBlock(Constants.BLAZEGOLD.COAL,  p -> new BlazeGoldCoalGenBlock(p));
+   
+    public static final DeferredHolder<Block, Block> CELESTIGEM_COAL = registerItemBlock(Constants.CELESTIGEM.COAL,  p -> new CelestigemCoalGenBlock(p));
+   
+    public static final DeferredHolder<Block, Block> ECLIPSE_ALLOY_COAL = registerItemBlock(Constants.ECLIPSE_ALLOY.COAL,  p -> new EclipseAlloyCoalGenBlock(p));
 
     public static DeferredHolder<Block, Block> registerItemBlock(String blockname,
             Function<BlockBehaviour.Properties, ? extends Block> sup) {

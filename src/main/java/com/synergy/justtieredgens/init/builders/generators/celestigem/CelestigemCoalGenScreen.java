@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.generators.blazegold;
+package com.synergy.justtieredgens.init.builders.generators.celestigem;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
@@ -6,14 +6,14 @@ import net.minecraft.world.entity.player.Inventory;
 import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenGUI;
 import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenScreen;
 
-public class SolidBlazeGoldGenScreen extends BaseCoalGenScreen {
+public class CelestigemCoalGenScreen extends BaseCoalGenScreen {
 
-    public SolidBlazeGoldGenScreen(BaseCoalGenGUI container, Inventory inv, Component name) {
+    public CelestigemCoalGenScreen(BaseCoalGenGUI container, Inventory inv, Component name) {
         super(container, inv, name);
     }
 
     public int getMultiplier() {
-        return 2;
+        return 3;
     }
 
 }

@@ -7,9 +7,9 @@ import com.synergy.justtieredgens.init.types.zBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SolidBlazeGoldGenBE extends BaseCoalGenBE {
+public class BlazeGoldCoalGenBE extends BaseCoalGenBE {
 
-    public SolidBlazeGoldGenBE(BlockPos pPos, BlockState pBlockState) {
+    public BlazeGoldCoalGenBE(BlockPos pPos, BlockState pBlockState) {
         super(zBlockEntities.BLAZEGOLD_COAL.get(), pPos, pBlockState);
     }
 
