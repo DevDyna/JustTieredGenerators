@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:blast_furnace",
+    "C": "justdirethings:coal_t3",
+    "F": "justdirethings:eclipsealloy_ingot",
+    "R": "minecraft:echo_shard"
+  },
+  "pattern": [
+    "FRF",
+    "CBC",
+    "FRF"
+  ],
+  "result": {
+    "id": "justtieredgens:eclipse_alloy_coal_generator"
+  }
+}

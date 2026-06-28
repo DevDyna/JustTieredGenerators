@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:blast_furnace",
+    "C": "justdirethings:coal_t2",
+    "F": "justdirethings:celestigem",
+    "R": "minecraft:ender_pearl"
+  },
+  "pattern": [
+    "FRF",
+    "CBC",
+    "FRF"
+  ],
+  "result": {
+    "id": "justtieredgens:celestigem_coal_generator"
+  }
+}

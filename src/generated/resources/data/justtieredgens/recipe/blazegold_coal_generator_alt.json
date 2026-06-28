@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:blast_furnace",
+    "C": "justdirethings:coal_t1",
+    "F": "justdirethings:blazegold_ingot",
+    "R": "#c:dusts/glowstone"
+  },
+  "pattern": [
+    "FRF",
+    "CBC",
+    "FRF"
+  ],
+  "result": {
+    "id": "justtieredgens:blazegold_coal_generator"
+  }
+}

@@ -1,8 +1,20 @@
 {
   "block.justtieredgens.blazegold_coal_generator": "Blazegold Coal Generator",
+  "block.justtieredgens.celestigem_coal_generator": "Celestigem Coal Generator",
+  "block.justtieredgens.eclipse_alloy_coal_generator": "Eclipse Alloy Coal Generator",
   "justtieredgens.configuration.blazegold_coal_generator": "Blazegold Coal Generator",
   "justtieredgens.configuration.blazegold_coal_generator_burn_speed_multiplier": "Multiplier to increase generator speed value",
   "justtieredgens.configuration.blazegold_coal_generator_fe_per_fuel_tick": "FE created per burn tick of fuel",
   "justtieredgens.configuration.blazegold_coal_generator_fe_per_tick": "FE transfer every tick",
-  "justtieredgens.configuration.blazegold_coal_generator_max_fe": "Max FE energy storage"
+  "justtieredgens.configuration.blazegold_coal_generator_max_fe": "Max FE energy storage",
+  "justtieredgens.configuration.celestigem_coal_generator": "Celestigem Coal Generator",
+  "justtieredgens.configuration.celestigem_coal_generator_burn_speed_multiplier": "Multiplier to increase generator speed value",
+  "justtieredgens.configuration.celestigem_coal_generator_fe_per_fuel_tick": "FE created per burn tick of fuel",
+  "justtieredgens.configuration.celestigem_coal_generator_fe_per_tick": "FE transfer every tick",
+  "justtieredgens.configuration.celestigem_coal_generator_max_fe": "Max FE energy storage",
+  "justtieredgens.configuration.eclipse_alloy_coal_generator": "Eclipse Alloy Coal Generator",
+  "justtieredgens.configuration.eclipse_alloy_coal_generator_burn_speed_multiplier": "Multiplier to increase generator speed value",
+  "justtieredgens.configuration.eclipse_alloy_coal_generator_fe_per_fuel_tick": "FE created per burn tick of fuel",
+  "justtieredgens.configuration.eclipse_alloy_coal_generator_fe_per_tick": "FE transfer every tick",
+  "justtieredgens.configuration.eclipse_alloy_coal_generator_max_fe": "Max FE energy storage"
 }
