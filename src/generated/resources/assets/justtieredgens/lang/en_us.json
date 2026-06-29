@@ -24,9 +24,9 @@
   "justtieredgens.jei.rate": "FE production",
   "justtieredgens.jei.time": "Duration",
   "justtieredgens.jei.total": "Total FE produced",
-  "justtieredgens.multiplier.blazegold": "§7Base fuel multiplier : §62x",
+  "justtieredgens.multiplier.blazegold": "§7Base fuel multiplier : §e2x",
   "justtieredgens.multiplier.celestigem": "§7Base fuel multiplier : §b3x",
-  "justtieredgens.multiplier.eclipsealloy": "§7Base fuel multiplier : §94x",
+  "justtieredgens.multiplier.eclipsealloy": "§7Base fuel multiplier : §d4x",
   "justtieredgens.multiplier.ferricore": "§7Base fuel multiplier : §f1x",
   "justtieredgensconfiguration.misc": "Misc",
   "justtieredgensconfiguration.show_only_coals": "Show only JDT fuels as valid fuels on generators jei"
