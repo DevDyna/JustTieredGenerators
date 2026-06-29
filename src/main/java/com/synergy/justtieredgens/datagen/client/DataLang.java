@@ -50,6 +50,10 @@ public class DataLang extends LanguageProvider {
                 add(MODULE_ID + ".jei.rate", "FE production");
                 add(MODULE_ID + ".jei.total", "Total FE produced");
 
+                add(MODULE_ID + "configuration.misc", "Misc");
+                add(MODULE_ID + "configuration.show_only_coals",
+                                "Show only JDT fuels as valid fuels on generators jei");
+
                 List.of(
                                 JDTRegistration.GeneratorT1_ITEM.getId().getPath(),
                                 Constants.BLAZEGOLD.COAL,
