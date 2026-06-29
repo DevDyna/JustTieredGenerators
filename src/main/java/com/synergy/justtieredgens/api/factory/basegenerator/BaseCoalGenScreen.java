@@ -82,19 +82,18 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
                 var remain = this.container.getBurnRemaining();
                 List<Component> lines = new ArrayList<>();
 
-                if (Minecraft.getInstance().hasShiftDown())
-                    lines.add(Component.translatable("justdirethings.screen.energy",
-                            MagicHelpers.formatted(this.container.getEnergy()),
-                            MagicHelpers.formatted(powered.getMaxEnergy())));
-                else
-                    lines.add(Component.translatable("justdirethings.screen.energy",
-                            MagicHelpers.withSuffix(this.container.getEnergy()),
-                            MagicHelpers.withSuffix(powered.getMaxEnergy())));
+                lines.add(Component.translatable("justdirethings.screen.energy",
+                        (Minecraft.getInstance().hasShiftDown()
+                                ? MagicHelpers.formatted(this.container.getEnergy())
+                                : MagicHelpers.withSuffix(this.container.getEnergy())),
+                        (Minecraft.getInstance().hasShiftDown()
+                                ? MagicHelpers.formatted(powered.getMaxEnergy())
+                                : MagicHelpers.withSuffix(powered.getMaxEnergy()))));
 
-                lines.add(remain > 0
-                        ? Component.translatable("justdirethings.screen.fepertick",
-                                MagicHelpers.formatted(generatorBE.fePerTick()))
-                        : Component.translatable("justdirethings.screen.fepertick", MagicHelpers.formatted(0)));
+                lines.add(Component.translatable("justdirethings.screen.fepertick", (remain > 0
+                        ? MagicHelpers.formatted(generatorBE.fePerTick())
+                        : MagicHelpers.formatted(0))));
+
                 lines.add(remain <= 0
                         ? Component.translatable("justdirethings.screen.no_fuel")
                         : Component.translatable("justdirethings.screen.burn_time",
@@ -134,14 +133,14 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
     public int getFuelValueFromItem(ItemStack i) {
 
         if (i.getItem() instanceof Coal_T1 coal)
-            return coal.getBurnSpeedMultiplier();
+            return getMultiplier() * coal.getBurnSpeedMultiplier();
 
         if (i.getItem() instanceof BlockItem bi
                 && bi.getBlock() instanceof CoalBlock_T1 coalBlock)
-            return coalBlock.getBurnSpeedMultiplier();
+            return getMultiplier() * coalBlock.getBurnSpeedMultiplier();
 
         if (i.getItem() instanceof FuelCanister)
-            return FuelCanister.getBurnSpeedMultiplier(i);
+            return getMultiplier() * FuelCanister.getBurnSpeedMultiplier(i);
 
         return getMultiplier();
     }
