@@ -61,9 +61,8 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
                 }));
     }
 
-    @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
-        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+    public void extractGeneratorSprites(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+
         graphics.blit(RenderPipelines.GUI_TEXTURED, JUSTSLOT, leftPos + 79, topPos + 30, 0.0F, 18.0F, 18, 18, 256, 256);
 
         if (container.getMaxBurn() > 0) {
@@ -73,6 +72,7 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
                     18.0F, 36.0F - remaining, 18,
                     remaining + 3, 256, 256);
         }
+
     }
 
     @Override
@@ -143,6 +143,35 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
             return getMultiplier() * FuelCanister.getBurnSpeedMultiplier(i);
 
         return getMultiplier();
+    }
+
+    /**
+     * TODO PR : JDT#516
+     * <br/>
+     * <br/>
+     * https://github.com/Direwolf20-MC/JustDireThings/pull/516
+     * <br/>
+     * <br/>
+     * <strong>Brute force override</strong> of the title sprite
+     * <br/>
+     * <br/>
+     * It will render another title sprite over the default
+     */
+    public void extractMachineTitle(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+
+        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, SOCIALBACKGROUND,
+                topSectionLeft + 20 - 10, topSectionTop - 20,
+                topSectionWidth - 40 + 20, 20);
+
+    }
+
+    @Override
+    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+
+        extractMachineTitle(graphics, mouseX, mouseY, partialTicks);
+
+        extractGeneratorSprites(graphics, mouseX, mouseY, partialTicks);
     }
 
 }
