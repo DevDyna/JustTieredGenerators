@@ -25,10 +25,15 @@ public class Config {
     public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_TICK;
     public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK;
     public static IntValue ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER;
+    
+    public static BooleanValue ENABLE_ALL_JEI_FUELS;
 
     private static final ModConfigSpec.Builder qCOMMON = new ModConfigSpec.Builder();
 
     public static void register(ModContainer c) {
+
+        
+
 
         qCOMMON.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
 
@@ -75,6 +80,12 @@ public class Config {
 
         ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                 Constants.ECLIPSE_ALLOY.COAL + "_burn_speed_multiplier", 4 * 4);
+
+        qCOMMON.pop();
+
+        qCOMMON.comment("Misc").push("misc");
+
+        ENABLE_ALL_JEI_FUELS = bool("Show only JDT fuels as valid fuels on generators jei", "show_only_coals");
 
         qCOMMON.pop();
 
