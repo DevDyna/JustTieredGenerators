@@ -3,6 +3,7 @@ package com.synergy.justtieredgens.common;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.direwolf20.justdirethings.common.blocks.GeneratorT1;
+import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenBlock;
 import com.synergy.justtieredgens.init.builders.generators.blazegold.BlazeGoldCoalGenBlock;
 import com.synergy.justtieredgens.init.builders.generators.celestigem.CelestigemCoalGenBlock;
 import com.synergy.justtieredgens.init.builders.generators.eclipse_alloy.EclipseAlloyCoalGenBlock;
@@ -24,7 +25,7 @@ public class ItemToolTipped {
                 // var isBlock = stack instanceof BlockItem;
                 var block = ((stack instanceof BlockItem bi) ? bi.getBlock() : null);
 
-                if (block instanceof GeneratorT1)
+                if (block instanceof GeneratorT1 && !(block instanceof BaseCoalGenBlock))
                         tip.add(OVER_THE_REGISTRY_ID, Component.translatable(MODULE_ID + ".multiplier.ferricore"));
 
                 if (block instanceof BlazeGoldCoalGenBlock)
