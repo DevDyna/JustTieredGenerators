@@ -33,7 +33,7 @@ public class Config {
         qCOMMON.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
 
         BLAZEGOLD_COAL_MAX_FE = number("Max FE energy storage",
-                Constants.BLAZEGOLD.COAL + "_max_fe", 1000000 * 2);
+                Constants.BLAZEGOLD.COAL + "_max_fe", 1_000_000 * 8);
 
         BLAZEGOLD_COAL_FE_PER_TICK = number("FE transfer every tick",
                 Constants.BLAZEGOLD.COAL + "_fe_per_tick", 1000 * 2);
@@ -49,7 +49,7 @@ public class Config {
         qCOMMON.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
 
         CELESTIGEM_COAL_MAX_FE = number("Max FE energy storage",
-                Constants.CELESTIGEM.COAL + "_max_fe", 1000000 * 3);
+                Constants.CELESTIGEM.COAL + "_max_fe", 1_000_000 * 32);
 
         CELESTIGEM_COAL_FE_PER_TICK = number("FE transfer every tick",
                 Constants.CELESTIGEM.COAL + "_fe_per_tick", 1000 * 3);
@@ -65,7 +65,7 @@ public class Config {
         qCOMMON.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
 
         ECLIPSE_ALLOY_COAL_MAX_FE = number("Max FE energy storage",
-                Constants.ECLIPSE_ALLOY.COAL + "_max_fe", 1000000 * 4);
+                Constants.ECLIPSE_ALLOY.COAL + "_max_fe", 1_000_000 * 128);
 
         ECLIPSE_ALLOY_COAL_FE_PER_TICK = number("FE transfer every tick",
                 Constants.ECLIPSE_ALLOY.COAL + "_fe_per_tick", 1000 * 4);
