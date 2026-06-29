@@ -66,7 +66,7 @@ public class DataLang extends LanguageProvider {
                                                                         ? "Ferricore"
                                                                         : idToDisplayName(s.replace("_coal_generator",
                                                                                         ""))))
-                                                                        + "Solid Generator Fuels");
+                                                                        + " Solid Generator Fuels");
                                 });
 
         }
