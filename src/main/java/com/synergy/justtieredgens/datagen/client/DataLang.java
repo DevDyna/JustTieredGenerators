@@ -69,6 +69,11 @@ public class DataLang extends LanguageProvider {
                                                                         + " Solid Generator Fuels");
                                 });
 
+                add(MODULE_ID + ".multiplier.ferricore", TIP_COLOR + "Base fuel multiplier : §f1x");
+                add(MODULE_ID + ".multiplier.blazegold", TIP_COLOR + "Base fuel multiplier : §62x");
+                add(MODULE_ID + ".multiplier.celestigem", TIP_COLOR + "Base fuel multiplier : §b3x");
+                add(MODULE_ID + ".multiplier.eclipsealloy", TIP_COLOR + "Base fuel multiplier : §94x");
+
         }
 
         // TODO API : move to api (StringUtils)
