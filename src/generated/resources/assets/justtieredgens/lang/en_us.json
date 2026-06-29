@@ -16,5 +16,14 @@
   "justtieredgens.configuration.eclipse_alloy_coal_generator_burn_speed_multiplier": "Multiplier to increase generator speed value",
   "justtieredgens.configuration.eclipse_alloy_coal_generator_fe_per_fuel_tick": "FE created per burn tick of fuel",
   "justtieredgens.configuration.eclipse_alloy_coal_generator_fe_per_tick": "FE transfer every tick",
-  "justtieredgens.configuration.eclipse_alloy_coal_generator_max_fe": "Max FE energy storage"
+  "justtieredgens.configuration.eclipse_alloy_coal_generator_max_fe": "Max FE energy storage",
+  "justtieredgens.jei.category.blazegold_coal_generator": "BlazegoldSolid Generator Fuels",
+  "justtieredgens.jei.category.celestigem_coal_generator": "CelestigemSolid Generator Fuels",
+  "justtieredgens.jei.category.eclipse_alloy_coal_generator": "Eclipse AlloySolid Generator Fuels",
+  "justtieredgens.jei.category.generatort1": "FerricoreSolid Generator Fuels",
+  "justtieredgens.jei.rate": "FE production",
+  "justtieredgens.jei.time": "Duration",
+  "justtieredgens.jei.total": "Total FE produced",
+  "justtieredgensconfiguration.misc": "Misc",
+  "justtieredgensconfiguration.show_only_coals": "Show only JDT fuels as valid fuels on generators jei"
 }
