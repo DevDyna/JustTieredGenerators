@@ -13,6 +13,9 @@ public abstract class BaseCoalGenBE extends GeneratorT1BE {
 
     public abstract int getMaxEnergy();
 
+    /**
+     * fe rate that the BE can provide to other blocks
+     */
     public abstract int getFEPerTick();
 
     public abstract int getFePerFuelTick();
