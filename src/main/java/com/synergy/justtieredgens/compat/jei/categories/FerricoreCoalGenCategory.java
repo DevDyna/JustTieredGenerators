@@ -31,10 +31,10 @@ public class FerricoreCoalGenCategory extends BaseCoalGenCategory {
         return JDTRegistration.GeneratorT1_ITEM.get();
     }
 
-    @Override
-    public int getMultiplier() {
-        return 1;
-    }
+    // @Override
+    // public int getMultiplier() {
+    //     return 1;
+    // }
 
     @Override
     public int getFePerFuelTick() {

@@ -32,10 +32,10 @@ public class EclipseAlloyCoalGenCategory extends BaseCoalGenCategory {
         return zBlocks.ECLIPSE_ALLOY_COAL.get();
     }
 
-    @Override
-    public int getMultiplier() {
-        return 4;
-    }
+    // @Override
+    // public int getMultiplier() {
+    //     return 4;
+    // }
 
     @Override
     public int getFePerFuelTick() {

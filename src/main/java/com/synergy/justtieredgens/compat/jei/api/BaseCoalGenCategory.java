@@ -60,7 +60,7 @@ public abstract class BaseCoalGenCategory extends BaseCategory<FuelRecords.Items
         return x.rl(MODULE_ID, "textures/gui/fuel_icons.png");
     }
 
-    public abstract int getMultiplier();
+    // public abstract int getMultiplier();
 
     @Override
     public void draw(FuelRecords.Items recipe, IRecipeSlotsView recipeSlotsView, GuiGraphicsExtractor guiGraphics,

@@ -32,10 +32,10 @@ public class CelestigemCoalGenCategory extends BaseCoalGenCategory {
         return zBlocks.CELESTIGEM_COAL.get();
     }
 
-    @Override
-    public int getMultiplier() {
-        return 3;
-    }
+    // @Override
+    // public int getMultiplier() {
+    //     return 3;
+    // }
 
     @Override
     public int getFePerFuelTick() {
