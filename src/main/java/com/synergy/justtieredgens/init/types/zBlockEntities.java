@@ -25,11 +25,12 @@ public class zBlockEntities {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BlazeGoldCoalGenBE>> BLAZEGOLD_COAL = RegistryUtils
             .createBlockEntity(Constants.BLAZEGOLD.COAL, zTiles, BlazeGoldCoalGenBE::new, zBlocks.BLAZEGOLD_COAL);
-   
-            public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CelestigemCoalGenBE>> CELESTIGEM_COAL = RegistryUtils
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CelestigemCoalGenBE>> CELESTIGEM_COAL = RegistryUtils
             .createBlockEntity(Constants.CELESTIGEM.COAL, zTiles, CelestigemCoalGenBE::new, zBlocks.CELESTIGEM_COAL);
-           
-            public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EclipseAlloyCoalGenBE>> ECLIPSE_ALLOY_COAL = RegistryUtils
-            .createBlockEntity(Constants.ECLIPSE_ALLOY.COAL, zTiles, EclipseAlloyCoalGenBE::new, zBlocks.ECLIPSE_ALLOY_COAL);
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EclipseAlloyCoalGenBE>> ECLIPSE_ALLOY_COAL = RegistryUtils
+            .createBlockEntity(Constants.ECLIPSE_ALLOY.COAL, zTiles, EclipseAlloyCoalGenBE::new,
+                    zBlocks.ECLIPSE_ALLOY_COAL);
 
 }
