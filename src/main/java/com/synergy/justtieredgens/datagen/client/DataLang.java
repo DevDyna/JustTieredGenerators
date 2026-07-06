@@ -6,6 +6,7 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 import java.util.List;
 
 import com.devdyna.cakesticklib.api.datagen.LangUtils;
+import com.devdyna.cakesticklib.api.datagen.LangUtils.TipColors;
 import com.devdyna.cakesticklib.api.utils.StringUtil;
 import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.Constants;
@@ -64,33 +65,17 @@ public class DataLang extends LanguageProvider {
                                         add(MODULE_ID + ".jei.category." + s,
                                                         ((s == JDTRegistration.GeneratorT1_ITEM.getId().getPath()
                                                                         ? "Ferricore"
-                                                                        : idToDisplayName(s.replace("_coal_generator",
-                                                                                        ""))))
+                                                                        : StringUtil.formatToDisplay(
+                                                                                        s.replace("_coal_generator",
+                                                                                                        ""))))
                                                                         + " Solid Generator Fuels");
                                 });
 
-                add(MODULE_ID + ".multiplier.ferricore", TIP_COLOR + "Base fuel multiplier : §f1x");
-                add(MODULE_ID + ".multiplier.blazegold", TIP_COLOR + "Base fuel multiplier : §e2x");
-                add(MODULE_ID + ".multiplier.celestigem", TIP_COLOR + "Base fuel multiplier : §b3x");
-                add(MODULE_ID + ".multiplier.eclipsealloy", TIP_COLOR + "Base fuel multiplier : §d4x");
+                add(MODULE_ID + ".multiplier.ferricore",TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §f1x");
+                add(MODULE_ID + ".multiplier.blazegold", TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §e2x");
+                add(MODULE_ID + ".multiplier.celestigem", TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §b3x");
+                add(MODULE_ID + ".multiplier.eclipsealloy", TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §d4x");
 
-        }
-
-        // TODO API : move to api (StringUtils)
-        public static String idToDisplayName(String input) {
-                var words = input.split("_");
-                var sb = new StringBuilder();
-
-                for (int i = 0; i < words.length; i++) {
-                        if (!words[i].isEmpty())
-                                sb.append(Character.toUpperCase(words[i].charAt(0)))
-                                                .append(words[i].substring(1));
-
-                        if (i < words.length - 1)
-                                sb.append(" ");
-                }
-
-                return sb.toString();
         }
 
 }
