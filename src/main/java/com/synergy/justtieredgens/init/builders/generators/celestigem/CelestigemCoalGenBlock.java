@@ -3,13 +3,11 @@ package com.synergy.justtieredgens.init.builders.generators.celestigem;
 import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenBlock;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CelestigemCoalGenBlock extends BaseCoalGenBlock {
+public class CelestigemCoalGenBlock extends BaseCoalGenBlock<CelestigemCoalGenGUI> {
 
     public CelestigemCoalGenBlock(Properties properties) {
         super(properties);
@@ -21,9 +19,8 @@ public class CelestigemCoalGenBlock extends BaseCoalGenBlock {
     }
 
     @Override
-    public void openMenu(Player player, BlockPos blockPos) {
-        player.openMenu(new SimpleMenuProvider((index, inv, p) -> new CelestigemCoalGenGUI(index, inv, blockPos),
-                Component.translatable("")), (b) -> b.writeBlockPos(blockPos));
+    public CelestigemCoalGenGUI getGui(int id, Inventory inv, BlockPos pos) {
+        return new CelestigemCoalGenGUI(id, inv, pos);
     }
 
 }

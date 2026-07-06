@@ -3,7 +3,6 @@ package com.synergy.justtieredgens.api.factory.basegenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.direwolf20.justdirethings.client.screens.basescreens.BaseMachineScreen;
 import com.direwolf20.justdirethings.common.blocks.resources.CoalBlock_T1;
 import com.direwolf20.justdirethings.common.items.FuelCanister;
 import com.direwolf20.justdirethings.common.items.resources.Coal_T1;
@@ -16,16 +15,15 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 
-import com.direwolf20.justdirethings.client.screens.standardbuttons.ToggleButtonFactory;
-import com.direwolf20.justdirethings.client.screens.widgets.ToggleButton;
 import com.direwolf20.justdirethings.common.blockentities.basebe.PoweredMachineBE;
 import com.direwolf20.justdirethings.util.MagicHelpers;
-import com.direwolf20.justdirethings.util.MiscHelpers;
 import com.direwolf20.justdirethings.util.MiscTools;
+import com.synergy.justtieredgens.api.templates.AbstractLargeMachineScreenLabel;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderPipelines;
 
-public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI> {
+public abstract class BaseCoalGenScreen extends AbstractLargeMachineScreenLabel<BaseCoalGenGUI> {
     protected BaseCoalGenGUI container;
     protected BaseCoalGenBE generatorBE;
 
@@ -35,30 +33,6 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
         if (container.baseMachineBE instanceof BaseCoalGenBE gen)
             this.generatorBE = gen;
 
-    }
-
-    @Override
-    public void init() {
-        super.init();
-    }
-
-    @Override
-    public void setTopSection() {
-        extraWidth = 0;
-        extraHeight = 0;
-    }
-
-    @Override
-    public void addTickSpeedButton() {
-    }
-
-    @Override
-    public void addRedstoneButtons() {
-        addRenderableWidget(
-                ToggleButtonFactory.REDSTONEBUTTON(leftPos + 104, topSectionTop + 38, redstoneMode.ordinal(), b -> {
-                    redstoneMode = MiscHelpers.RedstoneMode.values()[((ToggleButton) b).getTexturePosition()];
-                    saveSettings();
-                }));
     }
 
     public void extractGeneratorSprites(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
@@ -143,35 +117,6 @@ public abstract class BaseCoalGenScreen extends BaseMachineScreen<BaseCoalGenGUI
             return getMultiplier() * FuelCanister.getBurnSpeedMultiplier(i);
 
         return getMultiplier();
-    }
-
-    /**
-     * TODO PR : JDT#516
-     * <br/>
-     * <br/>
-     * https://github.com/Direwolf20-MC/JustDireThings/pull/516
-     * <br/>
-     * <br/>
-     * <strong>Brute force override</strong> of the title sprite
-     * <br/>
-     * <br/>
-     * It will render another title sprite over the default
-     */
-    public void extractMachineTitle(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
-
-        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, SOCIALBACKGROUND,
-                topSectionLeft + 20 - 10, topSectionTop - 20,
-                topSectionWidth - 40 + 20, 20);
-
-    }
-
-    @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
-        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
-
-        extractMachineTitle(graphics, mouseX, mouseY, partialTicks);
-
-        extractGeneratorSprites(graphics, mouseX, mouseY, partialTicks);
     }
 
 }
