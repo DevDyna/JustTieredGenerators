@@ -33,6 +33,10 @@ public class DataModel extends ModelProvider {
                 coalGenModel(blockModels, itemModels, zBlocks.CELESTIGEM_COAL);
                 coalGenModel(blockModels, itemModels, zBlocks.ECLIPSE_ALLOY_COAL);
 
+                fluidGenModel(blockModels, itemModels, zBlocks.BLAZEGOLD_FLUID);
+                fluidGenModel(blockModels, itemModels, zBlocks.CELESTIGEM_FLUID);
+                fluidGenModel(blockModels, itemModels, zBlocks.ECLIPSE_ALLOY_FLUID);
+
         }
 
         public void coalGenModel(BlockModelGenerators blockmodels, ItemModelGenerators itemModels,
@@ -52,17 +56,56 @@ public class DataModel extends ModelProvider {
                                                                 .put(TextureSlot.SIDE,
                                                                                 new Material(x.rl(
                                                                                                 MODULE_ID,
-                                                                                                "block/" + type + "/side")))
+                                                                                                "block/coal/" + type + "/side")))
 
                                                                 .put(TextureSlot.TOP,
 
                                                                                 new Material(x.rl(
                                                                                                 MODULE_ID,
-                                                                                                "block/" + type + "/top")))
+                                                                                                "block/coal/" + type + "/top")))
                                                                 .put(TextureSlot.BOTTOM,
                                                                                 new Material(x.rl(
                                                                                                 MODULE_ID,
-                                                                                                "block/" + type + "/bottom"))),
+                                                                                                "block/coal/" + type + "/bottom"))),
+                                                                blockmodels.modelOutput))));
+
+                itemModels.itemModelOutput.accept(b.get().asItem(),
+                                ItemModelUtils.plainModel(x.rl(MODULE_ID,"block/"+b.getId().getPath())));
+
+
+                
+        }
+
+
+
+        public void fluidGenModel(BlockModelGenerators blockmodels, ItemModelGenerators itemModels,
+                        DeferredHolder<Block, Block> b) {
+
+                var type = b.getId().getPath().replace(Constants.Suffix.FLUID, "");
+
+                blockmodels.blockStateOutput.accept(MultiVariantGenerator.dispatch(b.get(),
+                                BlockModelGenerators.plainVariant(new ModelTemplate(
+                                                Optional.of(x.rl(MODULE_ID, "block/template_generator")),
+                                                Optional.empty(),
+                                                TextureSlot.SIDE,
+                                                TextureSlot.TOP,
+                                                TextureSlot.BOTTOM)
+                                                .create(b.get(), new TextureMapping()
+
+                                                                .put(TextureSlot.SIDE,
+                                                                                new Material(x.rl(
+                                                                                                MODULE_ID,
+                                                                                                "block/fluid/" + type + "/side")))
+
+                                                                .put(TextureSlot.TOP,
+
+                                                                                new Material(x.rl(
+                                                                                                MODULE_ID,
+                                                                                                "block/fluid/" + type + "/top")))
+                                                                .put(TextureSlot.BOTTOM,
+                                                                                new Material(x.rl(
+                                                                                                MODULE_ID,
+                                                                                                "block/fluid/" + type + "/bottom"))),
                                                                 blockmodels.modelOutput))));
 
                 itemModels.itemModelOutput.accept(b.get().asItem(),
