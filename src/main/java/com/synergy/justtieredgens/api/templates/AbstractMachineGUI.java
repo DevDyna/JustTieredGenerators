@@ -26,7 +26,7 @@ public abstract class AbstractMachineGUI extends BaseMachineContainer {
     @Override
     public void addMachineSlots() {
         machineHandler = baseMachineBE.getMachineHandler();
-        addFuelSlotRange(machineHandler, machineHandler::set, 0, 80, 13, 1, 18);
+        addSlot(getFuelSlot(machineHandler, machineHandler::set, 0, 80, 13));
     }
 
     public abstract Block stillValid();
@@ -44,16 +44,6 @@ public abstract class AbstractMachineGUI extends BaseMachineContainer {
     @Override
     public void removed(Player playerIn) {
         super.removed(playerIn);
-    }
-
-    protected int addFuelSlotRange(ResourceHandler<ItemResource> handler, IndexModifier<ItemResource> slotModifier,
-            int index, int x, int y, int amount, int dx) {
-        for (int i = 0; i < amount; i++) {
-            addSlot(getFuelSlot(handler, slotModifier, index, dx, y));
-            x += dx;
-            index++;
-        }
-        return index;
     }
 
     public abstract ResourceHandlerSlot getFuelSlot(ResourceHandler<ItemResource> handler,

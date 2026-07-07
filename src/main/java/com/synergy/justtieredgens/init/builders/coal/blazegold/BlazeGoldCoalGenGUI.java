@@ -1,6 +1,6 @@
-package com.synergy.justtieredgens.init.builders.generators.blazegold;
+package com.synergy.justtieredgens.init.builders.coal.blazegold;
 
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenGUI;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.init.types.zBlocks;
 import com.synergy.justtieredgens.init.types.zContainers;
 

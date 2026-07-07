@@ -1,6 +1,6 @@
-package com.synergy.justtieredgens.init.builders.generators.celestigem;
+package com.synergy.justtieredgens.init.builders.coal.celestigem;
 
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenGUI;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.init.types.zBlocks;
 import com.synergy.justtieredgens.init.types.zContainers;
 

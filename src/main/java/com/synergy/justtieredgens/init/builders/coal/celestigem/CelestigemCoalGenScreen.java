@@ -1,10 +1,10 @@
-package com.synergy.justtieredgens.init.builders.generators.celestigem;
+package com.synergy.justtieredgens.init.builders.coal.celestigem;
+
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenScreen;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
-
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenGUI;
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenScreen;
 
 public class CelestigemCoalGenScreen extends BaseCoalGenScreen {
 

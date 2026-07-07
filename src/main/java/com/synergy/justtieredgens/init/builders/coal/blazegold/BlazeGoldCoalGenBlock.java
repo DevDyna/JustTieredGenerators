@@ -1,6 +1,6 @@
-package com.synergy.justtieredgens.init.builders.generators.blazegold;
+package com.synergy.justtieredgens.init.builders.coal.blazegold;
 
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenBlock;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;

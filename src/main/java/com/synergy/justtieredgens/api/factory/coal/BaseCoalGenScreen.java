@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.api.factory.basegenerator;
+package com.synergy.justtieredgens.api.factory.coal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,8 +77,6 @@ public abstract class BaseCoalGenScreen extends AbstractLargeMachineScreenLabel<
             }
         }
     }
-
-    public abstract int getMultiplier();
 
     @Override
     protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {

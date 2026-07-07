@@ -73,4 +73,9 @@ public abstract class AbstractLargeMachineScreenLabel<T extends BaseMachineConta
                 }));
     }
 
+    /**
+     * client side multiplier
+     */
+    public abstract int getMultiplier();
+
 }

@@ -1,7 +1,7 @@
-package com.synergy.justtieredgens.init.builders.generators.celestigem;
+package com.synergy.justtieredgens.init.builders.coal.celestigem;
 
 import com.synergy.justtieredgens.Config;
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenBE;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenBE;
 import com.synergy.justtieredgens.init.types.zBlockEntities;
 
 import net.minecraft.core.BlockPos;

@@ -3,9 +3,12 @@ package com.synergy.justtieredgens.init.types;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.generators.blazegold.BlazeGoldCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.generators.celestigem.CelestigemCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.generators.eclipse_alloy.EclipseAlloyCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenGUI;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
@@ -31,5 +34,17 @@ public class zContainers {
         public static final DeferredHolder<MenuType<?>, MenuType<EclipseAlloyCoalGenGUI>> ECLIPSE_ALLOY_COAL = zCTNR
                         .register(Constants.ECLIPSE_ALLOY.COAL,
                                         () -> IMenuTypeExtension.create(EclipseAlloyCoalGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<BlazeGoldFluidGenGUI>> BLAZEGOLD_FLUID = zCTNR
+                        .register(Constants.BLAZEGOLD.FLUID,
+                                        () -> IMenuTypeExtension.create(BlazeGoldFluidGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<CelestigemFluidGenGUI>> CELESTIGEM_FLUID = zCTNR
+                        .register(Constants.CELESTIGEM.FLUID,
+                                        () -> IMenuTypeExtension.create(CelestigemFluidGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<EclipseAlloyFluidGenGUI>> ECLIPSE_ALLOY_FLUID = zCTNR
+                        .register(Constants.ECLIPSE_ALLOY.FLUID,
+                                        () -> IMenuTypeExtension.create(EclipseAlloyFluidGenGUI::new));
 
 }

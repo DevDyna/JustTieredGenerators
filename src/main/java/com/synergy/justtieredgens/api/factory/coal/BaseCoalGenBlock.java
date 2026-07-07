@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.api.factory.basegenerator;
+package com.synergy.justtieredgens.api.factory.coal;
 
 import com.direwolf20.justdirethings.common.blocks.GeneratorT1;
 import com.direwolf20.justdirethings.common.blocks.baseblocks.BaseMachineBlock;

@@ -1,6 +1,6 @@
-package com.synergy.justtieredgens.init.builders.generators.eclipse_alloy;
+package com.synergy.justtieredgens.init.builders.coal.eclipse_alloy;
 
-import com.synergy.justtieredgens.api.factory.basegenerator.BaseCoalGenBlock;
+import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;

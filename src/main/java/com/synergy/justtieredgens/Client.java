@@ -1,8 +1,11 @@
 package com.synergy.justtieredgens;
 
-import com.synergy.justtieredgens.init.builders.generators.blazegold.BlazeGoldCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.generators.celestigem.CelestigemCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.generators.eclipse_alloy.EclipseAlloyCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
 import com.synergy.justtieredgens.init.types.zContainers;
 
 import net.neoforged.api.distmarker.Dist;
@@ -33,6 +36,11 @@ public class Client {
         event.register(zContainers.BLAZEGOLD_COAL.get(), BlazeGoldCoalGenScreen::new);
         event.register(zContainers.CELESTIGEM_COAL.get(), CelestigemCoalGenScreen::new);
         event.register(zContainers.ECLIPSE_ALLOY_COAL.get(), EclipseAlloyCoalGenScreen::new);
+
+        event.register(zContainers.BLAZEGOLD_FLUID.get(), BlazeGoldFluidGenScreen::new);
+        event.register(zContainers.CELESTIGEM_FLUID.get(), CelestigemFluidGenScreen::new);
+        event.register(zContainers.ECLIPSE_ALLOY_FLUID.get(), EclipseAlloyFluidGenScreen::new);
+
     }
 
 }
