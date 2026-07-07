@@ -7,6 +7,11 @@ public class Constants {
         public static final String FLUID = "_fuel_generator";
     }
 
+    public class FERRICORE {
+        public static final String COAL = "ferricore" + Suffix.COAL;
+        public static final String FLUID = "ferricore" + Suffix.FLUID;
+    }
+
     public class BLAZEGOLD {
         public static final String COAL = "blazegold" + Suffix.COAL;
         public static final String FLUID = "blazegold" + Suffix.FLUID;
