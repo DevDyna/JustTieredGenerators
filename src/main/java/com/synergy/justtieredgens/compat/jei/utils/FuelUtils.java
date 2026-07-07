@@ -3,6 +3,7 @@ package com.synergy.justtieredgens.compat.jei.utils;
 import java.util.Comparator;
 import java.util.List;
 
+import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.common.blocks.resources.CoalBlock_T1;
 import com.direwolf20.justdirethings.common.fluids.basefluids.RefinedFuel;
 import com.direwolf20.justdirethings.common.items.resources.Coal_T1;
@@ -31,7 +32,7 @@ public class FuelUtils {
     public static List<FluidStack> getAllRefinedFuels() {
         return BuiltInRegistries.FLUID.stream()
                 .filter(fluid -> fluid instanceof RefinedFuel)
-                .map(fluid -> new FluidStack(fluid, 1000))
+                .map(fluid -> x.fluid(fluid))
                 .toList();
     }
 
