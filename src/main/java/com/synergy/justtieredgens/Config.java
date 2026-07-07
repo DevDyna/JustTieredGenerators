@@ -106,7 +106,7 @@ public class Config {
                 BLAZEGOLD_FLUID_FE_PER_TICK = number("FE transfer every tick",
                                 Constants.BLAZEGOLD.FLUID + "_fe_per_tick", 1000 * 2);
 
-                BLAZEGOLD_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase FE generated from the fuel",
+                BLAZEGOLD_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.BLAZEGOLD.FLUID + "_fuel_multiplier", 2);
 
                 qCOMMON.pop();
@@ -122,7 +122,7 @@ public class Config {
                 CELESTIGEM_FLUID_FE_PER_TICK = number("FE transfer every tick",
                                 Constants.CELESTIGEM.FLUID + "_fe_per_tick", 1000 * 3);
 
-                CELESTIGEM_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase FE generated from the fuel",
+                CELESTIGEM_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.CELESTIGEM.FLUID + "_fuel_multiplier", 3);
 
                 qCOMMON.pop();
@@ -138,7 +138,7 @@ public class Config {
                 ECLIPSE_ALLOY_FLUID_FE_PER_TICK = number("FE transfer every tick",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fe_per_tick", 1000 * 4);
 
-                ECLIPSE_ALLOY_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase FE generated from the fuel",
+                ECLIPSE_ALLOY_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fuel_multiplier", 4);
 
                 qCOMMON.pop();
