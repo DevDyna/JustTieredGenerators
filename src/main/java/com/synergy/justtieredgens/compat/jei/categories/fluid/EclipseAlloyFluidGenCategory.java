@@ -1,7 +1,7 @@
 package com.synergy.justtieredgens.compat.jei.categories.fluid;
 
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.types.IRecipeType;
+import mezz.jei.api.recipe.RecipeType;
 
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
@@ -15,7 +15,7 @@ import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
 public class EclipseAlloyFluidGenCategory extends BaseFluidGenCategory {
-    public static final IRecipeType<FuelRecords.Fluids> TYPE = IRecipeType.create(MODULE_ID,
+    public static final RecipeType<FuelRecords.Fluids> TYPE = RecipeType.create(MODULE_ID,
             Constants.ECLIPSE_ALLOY.FLUID, FuelRecords.Fluids.class);
 
     public EclipseAlloyFluidGenCategory(IGuiHelper guiHelper) {
@@ -23,7 +23,7 @@ public class EclipseAlloyFluidGenCategory extends BaseFluidGenCategory {
     }
 
     @Override
-    public IRecipeType<FuelRecords.Fluids> getRecipeType() {
+    public RecipeType<FuelRecords.Fluids> getRecipeType() {
         return TYPE;
     }
 

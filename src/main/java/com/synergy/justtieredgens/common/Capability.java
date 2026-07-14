@@ -2,7 +2,7 @@ package com.synergy.justtieredgens.common;
 
 import com.direwolf20.justdirethings.common.blockentities.GeneratorFluidT1BE;
 import com.direwolf20.justdirethings.common.blockentities.GeneratorT1BE;
-import com.direwolf20.justdirethings.setup.JDTRegistration;
+import com.direwolf20.justdirethings.setup.Registration;
 import com.synergy.justtieredgens.init.types.zBlocks;
 
 import net.minecraft.world.level.block.Block;
@@ -26,34 +26,34 @@ public class Capability {
                                 zBlocks.ECLIPSE_ALLOY_FLUID.get() };
 
                 event.registerBlock(
-                                Capabilities.Item.BLOCK, (level, pos, state, be,
+                                Capabilities.ItemHandler.BLOCK, (level, pos, state, be,
                                                 side) -> be instanceof GeneratorT1BE
-                                                                ? be.getData(JDTRegistration.GENERATOR_ITEM_HANDLER)
+                                                                ? be.getData(Registration.GENERATOR_ITEM_HANDLER)
                                                                 : null,
                                 coal_gens);
 
-                event.registerBlock(Capabilities.Energy.BLOCK, (level, pos, state, be,
+                event.registerBlock(Capabilities.EnergyStorage.BLOCK, (level, pos, state, be,
                                 side) -> be instanceof GeneratorT1BE
-                                                ? be.getData(JDTRegistration.ENERGYSTORAGE_GENERATORS)
+                                                ? be.getData(Registration.ENERGYSTORAGE_GENERATORS)
                                                 : null,
                                 coal_gens);
 
                 event.registerBlock(
-                                Capabilities.Item.BLOCK, (level, pos, state, be,
+                                Capabilities.ItemHandler.BLOCK, (level, pos, state, be,
                                                 side) -> be instanceof GeneratorFluidT1BE
-                                                                ? be.getData(JDTRegistration.GENERATOR_FLUID_ITEM_HANDLER)
+                                                                ? be.getData(Registration.GENERATOR_FLUID_ITEM_HANDLER)
                                                                 : null,
                                 fluid_gens);
 
-                event.registerBlock(Capabilities.Energy.BLOCK, (level, pos, state, be,
+                event.registerBlock(Capabilities.EnergyStorage.BLOCK, (level, pos, state, be,
                                 side) -> be instanceof GeneratorFluidT1BE
-                                                ? be.getData(JDTRegistration.ENERGYSTORAGE_GENERATORS)
+                                                ? be.getData(Registration.ENERGYSTORAGE_GENERATORS)
                                                 : null,
                                 fluid_gens);
 
-                event.registerBlock(Capabilities.Fluid.BLOCK, (level, pos, state, be,
+                event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, state, be,
                                 side) -> be instanceof GeneratorFluidT1BE
-                                                ? be.getData(JDTRegistration.GENERATOR_FLUID_HANDLER)
+                                                ? be.getData(Registration.GENERATOR_FLUID_HANDLER)
                                                 : null,
                                 fluid_gens);
 

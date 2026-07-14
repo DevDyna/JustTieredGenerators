@@ -6,8 +6,7 @@ import com.direwolf20.justdirethings.client.screens.widgets.ToggleButton;
 import com.direwolf20.justdirethings.common.containers.basecontainers.BaseMachineContainer;
 import com.direwolf20.justdirethings.util.MiscHelpers;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -33,15 +32,13 @@ public abstract class AbstractLargeMachineScreenLabel<T extends BaseMachineConta
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
-        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
-
+    protected void renderBg(GuiGraphics graphics, float partialTicks, int mouseX, int mouseY) {
+        super.renderBg(graphics, partialTicks, mouseX, mouseY);
         extractMachineTitle(graphics, mouseX, mouseY, partialTicks);
-
         extractGeneratorSprites(graphics, mouseX, mouseY, partialTicks);
     }
 
-    public void extractGeneratorSprites(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+    public void extractGeneratorSprites(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
     }
 
     /**
@@ -56,9 +53,9 @@ public abstract class AbstractLargeMachineScreenLabel<T extends BaseMachineConta
      * <br/>
      * It will render another title sprite over the default
      */
-    public void extractMachineTitle(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+    public void extractMachineTitle(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
 
-        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, SOCIALBACKGROUND,
+        graphics.blitSprite(SOCIALBACKGROUND,
                 topSectionLeft + 20 - 10, topSectionTop - 20,
                 topSectionWidth - 40 + 20, 20);
 

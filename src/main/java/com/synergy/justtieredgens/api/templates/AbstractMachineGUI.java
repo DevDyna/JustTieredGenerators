@@ -9,12 +9,11 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.transfer.IndexModifier;
-import net.neoforged.neoforge.transfer.ResourceHandler;
-import net.neoforged.neoforge.transfer.item.ItemResource;
-import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
+import net.neoforged.neoforge.items.ItemStackHandler;
+
 
 public abstract class AbstractMachineGUI extends BaseMachineContainer {
 
@@ -26,7 +25,7 @@ public abstract class AbstractMachineGUI extends BaseMachineContainer {
     @Override
     public void addMachineSlots() {
         machineHandler = baseMachineBE.getMachineHandler();
-        addSlot(getFuelSlot(machineHandler, machineHandler::set, 0, 80, 13));
+        addSlot(getFuelSlot(machineHandler, 0, 80, 13));
     }
 
     public abstract Block stillValid();
@@ -46,6 +45,6 @@ public abstract class AbstractMachineGUI extends BaseMachineContainer {
         super.removed(playerIn);
     }
 
-    public abstract ResourceHandlerSlot getFuelSlot(ResourceHandler<ItemResource> handler,
-            IndexModifier<ItemResource> modifier, int index, int x, int y);
+    public abstract Slot getFuelSlot(ItemStackHandler  handler,
+             int index, int x, int y);
 }

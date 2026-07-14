@@ -1,12 +1,12 @@
 package com.synergy.justtieredgens.compat.jei.categories.coal;
 
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.types.IRecipeType;
+import mezz.jei.api.recipe.RecipeType;
 
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.direwolf20.justdirethings.setup.Config;
-import com.direwolf20.justdirethings.setup.JDTRegistration;
+import com.direwolf20.justdirethings.setup.Registration;
 import com.synergy.justtieredgens.Constants;
 import com.synergy.justtieredgens.compat.jei.api.BaseCoalGenCategory;
 import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
@@ -15,21 +15,21 @@ import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
 public class FerricoreCoalGenCategory extends BaseCoalGenCategory {
-    public static final IRecipeType<FuelRecords.Items> TYPE = IRecipeType.create(MODULE_ID,
-            JDTRegistration.GeneratorT1_ITEM.getId().getPath(), FuelRecords.Items.class);
+    public static final RecipeType<FuelRecords.Items> TYPE = RecipeType.create(MODULE_ID,
+            Registration.GeneratorT1_ITEM.getId().getPath(), FuelRecords.Items.class);
 
     public FerricoreCoalGenCategory(IGuiHelper guiHelper) {
         super(guiHelper);
     }
 
     @Override
-    public IRecipeType<FuelRecords.Items> getRecipeType() {
+    public RecipeType<FuelRecords.Items> getRecipeType() {
         return TYPE;
     }
 
     @Override
     public ItemLike getGenerator() {
-        return JDTRegistration.GeneratorT1_ITEM.get();
+        return Registration.GeneratorT1_ITEM.get();
     }
 
      @Override

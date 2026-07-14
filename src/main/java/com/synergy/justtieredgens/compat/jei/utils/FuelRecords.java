@@ -1,6 +1,5 @@
 package com.synergy.justtieredgens.compat.jei.utils;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.fluids.FluidStack;
 
@@ -15,7 +14,7 @@ public class FuelRecords {
         }
 
         public int getBurnTime() {
-            return fuels.getFirst().getBurnTime(null, Minecraft.getInstance().level.fuelValues());
+            return fuels.getFirst().getBurnTime(null);
         }
     }
 

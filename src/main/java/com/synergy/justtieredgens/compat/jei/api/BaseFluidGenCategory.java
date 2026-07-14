@@ -3,12 +3,10 @@ package com.synergy.justtieredgens.compat.jei.api;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
-import com.devdyna.cakesticklib.api.compat.jei.JEIFluidTankHelper;
-import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import com.synergy.justtieredgens.api.JEIFluidTankHelper;
+import com.synergy.justtieredgens.api.x;
+import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 
 @SuppressWarnings("null")
 public abstract class BaseFluidGenCategory extends BaseGenCategory<FuelRecords.Fluids> {
@@ -20,8 +18,8 @@ public abstract class BaseFluidGenCategory extends BaseGenCategory<FuelRecords.F
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, FuelRecords.Fluids recipe, IFocusGroup focuses) {
         JEIFluidTankHelper.of()
-                .fluid(new SizedFluidIngredient(FluidIngredient.of(recipe.getFuels().toArray(FluidStack[]::new)), 1))
-                .offset(1, 8 + 16)
+                .fluid(recipe.getFuels().stream().map(f->x.fluid(f.getFluid(),1)).toList())
+                .offset(1, 8)
                 .build((x, y) -> builder.addInputSlot(x, y));
     }
 

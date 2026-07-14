@@ -5,16 +5,18 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
-import com.devdyna.cakesticklib.api.compat.jei.BaseCategory;
-import com.devdyna.cakesticklib.api.compat.jei.ImageJei;
-import com.devdyna.cakesticklib.api.primitive.Pos;
-import com.devdyna.cakesticklib.api.primitive.Size;
-import com.devdyna.cakesticklib.api.utils.x;
-import com.direwolf20.justdirethings.util.MagicHelpers;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import com.direwolf20.justdirethings.util.MagicHelpers;
+import com.synergy.justtieredgens.api.BaseCategory;
+import com.synergy.justtieredgens.api.ImageJei;
+import com.synergy.justtieredgens.api.Pos;
+import com.synergy.justtieredgens.api.Size;
+import com.synergy.justtieredgens.api.x;
+
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
@@ -44,12 +46,12 @@ public abstract class BaseGenCategory<T> extends BaseCategory<T> {
     public abstract String getType();
 
     @Override
-    public Identifier setBackGround() {
+    public ResourceLocation setBackGround() {
         return x.rl(MODULE_ID, "textures/gui/labels.png");
     }
 
     @Override
-    public void background(GuiGraphicsExtractor graphics) {
+    public void background(GuiGraphics graphics) {
         super.background(graphics);
 
         ImageJei.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/" + (isFluid() ? "bucket" : "time") + ".png"))
@@ -85,43 +87,43 @@ public abstract class BaseGenCategory<T> extends BaseCategory<T> {
     }
 
     @Override
-    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphicsExtractor guiGraphics, double mouseX,
+    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX,
             double mouseY) {
         super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
         informations(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
     }
 
-    public void informations(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphicsExtractor guiGraphics,
+    public void informations(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics,
             double mouseX,
             double mouseY) {
 
         var stack = guiGraphics.pose();
-        stack.pushMatrix();
-        stack.scale(0.75F, 0.75F);
+        stack.pushPose();
+        stack.scale(0.75F, 0.75F,1f);
 
-        guiGraphics.text(font,
+        guiGraphics.drawString(font,
                 isFluid() ? "1 mb every tick"
-                        : (hasShiftDown()
+                        : (Screen.hasShiftDown()
                                 ? MagicHelpers.ticksInSeconds(getTime(recipe))
                                         + " sec"
                                 : getTime(recipe) + " tick" + (getTime(recipe) > 1 ? "s" : "")),
                 46, 4,
-                0xFFFFFFFF);
+                0xFFFFFF);
 
-        guiGraphics.text(font,
-                (hasShiftDown()
+        guiGraphics.drawString(font,
+                (Screen.hasShiftDown()
                         ? MagicHelpers.withSuffix(getRate(recipe))
                         : getRate(recipe)) + " FE/tick",
-                46, 18, 0xFFFFFFFF);
+                46, 18, 0xFFFFFF);
 
-        guiGraphics.text(font,
-                (hasShiftDown()
+        guiGraphics.drawString(font,
+                (Screen.hasShiftDown()
                         ? MagicHelpers.withSuffix(getTotal(recipe))
                         : getTotal(recipe)) + " FE",
                 46,
                 32,
-                0xFFFFFFFF);
-        stack.popMatrix();
+                0xFFFFFF);
+        stack.popPose();
     }
 
     @Override

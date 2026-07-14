@@ -8,10 +8,8 @@ import com.synergy.justtieredgens.api.templates.AbstractMachineGUI;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.MenuType;
-import net.neoforged.neoforge.transfer.IndexModifier;
-import net.neoforged.neoforge.transfer.ResourceHandler;
-import net.neoforged.neoforge.transfer.item.ItemResource;
-import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
+import net.minecraft.world.inventory.Slot;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public abstract class BaseCoalGenGUI extends AbstractMachineGUI {
 
@@ -32,9 +30,9 @@ public abstract class BaseCoalGenGUI extends AbstractMachineGUI {
     }
 
     @Override
-    public ResourceHandlerSlot getFuelSlot(ResourceHandler<ItemResource> handler, IndexModifier<ItemResource> modifier,
+    public Slot getFuelSlot(ItemStackHandler  handler, 
             int index, int x, int y) {
-        return new FuelSlot(handler, modifier, index, x, y);
+        return new FuelSlot(handler,index, x, y);
     }
 
 }

@@ -2,7 +2,7 @@ package com.synergy.justtieredgens.datagen.server;
 
 import java.util.*;
 
-import com.devdyna.cakesticklib.api.utils.LootTableHelper;
+import com.synergy.justtieredgens.api.LootTableHelper;
 import com.synergy.justtieredgens.init.types.zBlocks;
 
 import net.minecraft.core.HolderLookup;

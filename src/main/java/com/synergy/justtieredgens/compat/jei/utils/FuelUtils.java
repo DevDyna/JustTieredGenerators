@@ -3,12 +3,11 @@ package com.synergy.justtieredgens.compat.jei.utils;
 import java.util.Comparator;
 import java.util.List;
 
-import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.common.blocks.resources.CoalBlock_T1;
 import com.direwolf20.justdirethings.common.fluids.basefluids.RefinedFuel;
 import com.direwolf20.justdirethings.common.items.resources.Coal_T1;
+import com.synergy.justtieredgens.api.x;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +17,7 @@ public class FuelUtils {
     public static List<ItemStack> getAllSolidFuels() {
         return BuiltInRegistries.ITEM.stream()
                 .map(ItemStack::new)
-                .filter(i->i.getBurnTime(null, Minecraft.getInstance().level.fuelValues()) > 0)
+                .filter(i->i.getBurnTime(null) > 0)
                 .sorted(Comparator.comparingInt(stack -> {
                     if (stack.getItem() instanceof Coal_T1)
                         return 0;

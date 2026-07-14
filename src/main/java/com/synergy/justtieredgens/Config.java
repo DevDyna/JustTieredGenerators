@@ -1,14 +1,12 @@
 package com.synergy.justtieredgens;
 
-import com.devdyna.cakesticklib.api.utils.ModAddonUtil;
-import com.devdyna.cakesticklib.api.utils.StringUtil;
+import com.synergy.justtieredgens.api.StringUtil;
 
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.*;
 
-@SuppressWarnings("unused")
 public class Config {
 
         public static IntValue BLAZEGOLD_COAL_MAX_FE;
@@ -183,6 +181,7 @@ public class Config {
          * max = Double.MAX_VALUE
          */
 
+        @SuppressWarnings("unused")
         private static DoubleValue numberFloat(String c, String k, double d) {
                 return numberFloat(c, k, d, 0, Integer.MAX_VALUE);
         }
@@ -190,6 +189,7 @@ public class Config {
         /**
          * max = Double.MAX_VALUE
          */
+        @SuppressWarnings("unused")
         private static DoubleValue numberFloat(String c, String k, double d, double min) {
                 return numberFloat(c, k, d, min, Integer.MAX_VALUE);
         }
@@ -206,6 +206,7 @@ public class Config {
         /**
          * max = Integer.MAX_VALUE
          */
+        @SuppressWarnings("unused")
         private static IntValue number(String c, String k, int d, int min) {
                 return number(c, k, d, min, Integer.MAX_VALUE);
         }

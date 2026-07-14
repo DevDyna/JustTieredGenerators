@@ -1,7 +1,7 @@
 package com.synergy.justtieredgens.compat.jei.categories.coal;
 
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.types.IRecipeType;
+import mezz.jei.api.recipe.RecipeType;
 
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
@@ -15,7 +15,7 @@ import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
 public class BlazeGoldCoalGenCategory extends BaseCoalGenCategory {
-    public static final IRecipeType<FuelRecords.Items> TYPE = IRecipeType.create(MODULE_ID,
+    public static final RecipeType<FuelRecords.Items> TYPE = RecipeType.create(MODULE_ID,
             Constants.BLAZEGOLD.COAL, FuelRecords.Items.class);
 
     public BlazeGoldCoalGenCategory(IGuiHelper guiHelper) {
@@ -23,7 +23,7 @@ public class BlazeGoldCoalGenCategory extends BaseCoalGenCategory {
     }
 
     @Override
-    public IRecipeType<FuelRecords.Items> getRecipeType() {
+    public RecipeType<FuelRecords.Items> getRecipeType() {
         return TYPE;
     }
 

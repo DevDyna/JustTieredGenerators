@@ -5,8 +5,7 @@ import com.direwolf20.justdirethings.common.blockentities.GeneratorFluidT1BE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.transfer.fluid.FluidResource;
-import net.neoforged.neoforge.transfer.transaction.Transaction;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 
 public abstract class BaseFluidGenBE extends GeneratorFluidT1BE {
 
@@ -36,20 +35,15 @@ public abstract class BaseFluidGenBE extends GeneratorFluidT1BE {
         if (fePerFuelTick == 0 || !(insertEnergy(fePerFuelTick, true) == fePerFuelTick))
             return;
 
-        FluidResource fluid = getFluidTank().getResource(0);
+        var fluid = getFluidTank().getFluidInTank(0);
 
         if (fluid.isEmpty())
             return;
 
-        int extracted = 0;
-        try (Transaction tx = Transaction.openRoot()) {
-            extracted = getFluidTank().extract(0, fluid, 1, tx);
+        var extracted = getFluidTank().drain(1, FluidAction.SIMULATE);
 
-            if (extracted == 0)
-                return;
-
-            tx.commit();
-        }
+        if (!extracted.isEmpty())
+            getFluidTank().drain(1, FluidAction.EXECUTE);
 
         insertEnergy(fePerFuelTick, false);
 
