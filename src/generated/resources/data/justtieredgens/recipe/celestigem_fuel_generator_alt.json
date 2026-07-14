@@ -2,10 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "minecraft:blast_furnace",
-    "C": "justdirethings:portal_fluid_bucket",
-    "F": "justdirethings:celestigem",
-    "R": "minecraft:ender_pearl"
+    "B": {
+      "item": "minecraft:blast_furnace"
+    },
+    "C": {
+      "item": "justdirethings:portal_fluid_bucket"
+    },
+    "F": {
+      "item": "justdirethings:celestigem"
+    },
+    "R": {
+      "item": "minecraft:ender_pearl"
+    }
   },
   "pattern": [
     "FRF",
@@ -13,6 +21,7 @@
     "FRF"
   ],
   "result": {
+    "count": 1,
     "id": "justtieredgens:celestigem_fuel_generator"
   }
 }

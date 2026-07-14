@@ -2,10 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "minecraft:blast_furnace",
-    "C": "justdirethings:time_fluid_bucket",
-    "F": "justdirethings:eclipsealloy_ingot",
-    "R": "minecraft:echo_shard"
+    "B": {
+      "item": "minecraft:blast_furnace"
+    },
+    "C": {
+      "item": "justdirethings:time_fluid_bucket"
+    },
+    "F": {
+      "item": "justdirethings:eclipsealloy_ingot"
+    },
+    "R": {
+      "item": "minecraft:echo_shard"
+    }
   },
   "pattern": [
     "FRF",
@@ -13,6 +21,7 @@
     "FRF"
   ],
   "result": {
+    "count": 1,
     "id": "justtieredgens:eclipse_alloy_fuel_generator"
   }
 }

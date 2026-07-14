@@ -2,10 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "justtieredgens:celestigem_coal_generator",
-    "C": "justdirethings:coal_t3",
-    "F": "justdirethings:eclipsealloy_ingot",
-    "R": "minecraft:echo_shard"
+    "B": {
+      "item": "justtieredgens:celestigem_coal_generator"
+    },
+    "C": {
+      "item": "justdirethings:coal_t3"
+    },
+    "F": {
+      "item": "justdirethings:eclipsealloy_ingot"
+    },
+    "R": {
+      "item": "minecraft:echo_shard"
+    }
   },
   "pattern": [
     "FRF",
@@ -13,6 +21,7 @@
     "FRF"
   ],
   "result": {
+    "count": 1,
     "id": "justtieredgens:eclipse_alloy_coal_generator"
   }
 }

@@ -2,10 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "justdirethings:generatort1",
-    "C": "justdirethings:coal_t1",
-    "F": "justdirethings:blazegold_ingot",
-    "R": "#c:dusts/glowstone"
+    "B": {
+      "item": "justdirethings:generatort1"
+    },
+    "C": {
+      "item": "justdirethings:coal_t1"
+    },
+    "F": {
+      "item": "justdirethings:blazegold_ingot"
+    },
+    "R": {
+      "tag": "c:dusts/glowstone"
+    }
   },
   "pattern": [
     "FRF",
@@ -13,6 +21,7 @@
     "FRF"
   ],
   "result": {
+    "count": 1,
     "id": "justtieredgens:blazegold_coal_generator"
   }
 }

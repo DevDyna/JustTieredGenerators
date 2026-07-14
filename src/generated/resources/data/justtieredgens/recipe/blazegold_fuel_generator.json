@@ -2,10 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "justdirethings:generatorfluidt1",
-    "C": "justdirethings:polymorphic_fluid_bucket",
-    "F": "justdirethings:blazegold_ingot",
-    "R": "#c:dusts/glowstone"
+    "B": {
+      "item": "justdirethings:generatorfluidt1"
+    },
+    "C": {
+      "item": "justdirethings:polymorphic_fluid_bucket"
+    },
+    "F": {
+      "item": "justdirethings:blazegold_ingot"
+    },
+    "R": {
+      "tag": "c:dusts/glowstone"
+    }
   },
   "pattern": [
     "FRF",
@@ -13,6 +21,7 @@
     "FRF"
   ],
   "result": {
+    "count": 1,
     "id": "justtieredgens:blazegold_fuel_generator"
   }
 }
