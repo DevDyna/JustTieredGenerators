@@ -1,8 +1,0 @@
-{
-  "parent": "justtieredgens:block/template_generator",
-  "textures": {
-    "bottom": "justtieredgens:block/fluid/eclipse_alloy/bottom",
-    "side": "justtieredgens:block/fluid/eclipse_alloy/side",
-    "top": "justtieredgens:block/fluid/eclipse_alloy/top"
-  }
-}

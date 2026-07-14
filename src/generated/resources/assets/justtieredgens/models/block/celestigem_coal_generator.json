@@ -1,8 +1,0 @@
-{
-  "parent": "justtieredgens:block/template_generator",
-  "textures": {
-    "bottom": "justtieredgens:block/coal/celestigem/bottom",
-    "side": "justtieredgens:block/coal/celestigem/side",
-    "top": "justtieredgens:block/coal/celestigem/top"
-  }
-}

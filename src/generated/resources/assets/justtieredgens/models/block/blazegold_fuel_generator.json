@@ -1,8 +1,0 @@
-{
-  "parent": "justtieredgens:block/template_generator",
-  "textures": {
-    "bottom": "justtieredgens:block/fluid/blazegold/bottom",
-    "side": "justtieredgens:block/fluid/blazegold/side",
-    "top": "justtieredgens:block/fluid/blazegold/top"
-  }
-}
