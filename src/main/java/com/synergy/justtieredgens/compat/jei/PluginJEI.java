@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.devdyna.cakesticklib.api.utils.x;
+import com.direwolf20.justdirethings.client.screens.GeneratorFluidT1Screen;
+import com.direwolf20.justdirethings.client.screens.GeneratorT1Screen;
 import com.direwolf20.justdirethings.common.blocks.resources.CoalBlock_T1;
 import com.direwolf20.justdirethings.common.fluids.basefluids.RefinedFuel;
 import com.direwolf20.justdirethings.common.items.resources.Coal_T1;
@@ -24,12 +26,19 @@ import com.synergy.justtieredgens.compat.jei.categories.fluid.EclipseAlloyFluidG
 import com.synergy.justtieredgens.compat.jei.categories.fluid.FerricoreFluidGenCategory;
 import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 import com.synergy.justtieredgens.compat.jei.utils.FuelUtils;
+import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
 import com.synergy.justtieredgens.init.types.zBlocks;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -93,6 +102,35 @@ public class PluginJEI implements IModPlugin {
         registerFluidFuels(r, BlazeGoldFluidGenCategory.TYPE);
         registerFluidFuels(r, CelestigemFluidGenCategory.TYPE);
         registerFluidFuels(r, EclipseAlloyFluidGenCategory.TYPE);
+
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration r) {
+
+        r.addRecipeClickArea(GeneratorT1Screen.class, 158, -22, 16, 16,
+                FerricoreCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(GeneratorFluidT1Screen.class, 158, -22, 16, 16,
+                FerricoreFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(BlazeGoldCoalGenScreen.class, 158, -22, 16, 16,
+                BlazeGoldCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(BlazeGoldFluidGenScreen.class, 158, -22, 16, 16,
+                BlazeGoldFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(CelestigemCoalGenScreen.class, 158, -22, 16, 16,
+                CelestigemCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(CelestigemFluidGenScreen.class, 158, -22, 16, 16,
+                CelestigemFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(EclipseAlloyCoalGenScreen.class, 158, -22, 16, 16,
+                EclipseAlloyCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(EclipseAlloyFluidGenScreen.class, 158, -22, 16, 16,
+                EclipseAlloyFluidGenCategory.TYPE);
 
     }
 
