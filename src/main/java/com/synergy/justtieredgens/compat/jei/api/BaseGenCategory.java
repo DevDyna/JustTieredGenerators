@@ -8,7 +8,7 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.direwolf20.justdirethings.util.MagicHelpers;
 import com.synergy.justtieredgens.api.BaseCategory;
-import com.synergy.justtieredgens.api.ImageJei;
+import com.synergy.justtieredgens.api.Image;
 import com.synergy.justtieredgens.api.Pos;
 import com.synergy.justtieredgens.api.Size;
 import com.synergy.justtieredgens.api.x;
@@ -54,18 +54,18 @@ public abstract class BaseGenCategory<T> extends BaseCategory<T> {
     public void background(GuiGraphics graphics) {
         super.background(graphics);
 
-        ImageJei.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/" + (isFluid() ? "bucket" : "time") + ".png"))
+        Image.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/" + (isFluid() ? "bucket" : "time") + ".png"))
                 .size(10, 10)
                 .offset(21, 0)
                 .render(helper, graphics);
 
-        ImageJei.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/rate.png"))
+        Image.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/rate.png"))
                 .size(10, 10)
                 .offset(21, 11)
                 .render(helper, graphics);
 
                 //TODO sprite rework
-        ImageJei.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/" + (isFluid() ? "chest" : "chest") + ".png"))
+        Image.of().rl(x.rl(MODULE_ID, "textures/gui/sprites/" + (isFluid() ? "chest" : "chest") + ".png"))
                 .size(10, 10)
                 .offset(21, 22)
                 .render(helper, graphics);

@@ -26,11 +26,11 @@ public abstract class BaseCategory<T> implements IRecipeCategory<T>  {
 
     public final Font font = Minecraft.getInstance().font;
 
-    protected final ImageJei backgroundImage;
+    protected final Image backgroundImage;
 
     public BaseCategory(IGuiHelper h) {
         this.helper = h;
-        this.backgroundImage = ImageJei.of()
+        this.backgroundImage = Image.of()
                 .rl(this.setBackGround())
                 .size(this.getWidth(), this.getHeight());
     }
