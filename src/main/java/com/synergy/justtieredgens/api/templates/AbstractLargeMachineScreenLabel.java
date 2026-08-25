@@ -1,10 +1,13 @@
 package com.synergy.justtieredgens.api.templates;
 
+import static com.synergy.justtieredgens.Main.MODULE_ID;
+
 import com.direwolf20.justdirethings.client.screens.basescreens.BaseMachineScreen;
 import com.direwolf20.justdirethings.client.screens.standardbuttons.ToggleButtonFactory;
 import com.direwolf20.justdirethings.client.screens.widgets.ToggleButton;
 import com.direwolf20.justdirethings.common.containers.basecontainers.BaseMachineContainer;
 import com.direwolf20.justdirethings.util.MiscHelpers;
+import com.synergy.justtieredgens.api.Image;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -35,19 +38,16 @@ public abstract class AbstractLargeMachineScreenLabel<T extends BaseMachineConta
     protected void renderBg(GuiGraphics graphics, float partialTicks, int mouseX, int mouseY) {
         super.renderBg(graphics, partialTicks, mouseX, mouseY);
         extractMachineTitle(graphics, mouseX, mouseY, partialTicks);
-        extractGeneratorSprites(graphics, mouseX, mouseY, partialTicks);
-    }
 
-    public void extractGeneratorSprites(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        Image.of()
+                .rl(MODULE_ID, "textures/gui/slots/recipe.png")
+                .size(16, 16)
+                .offset(getGuiLeft() + 158, getGuiTop() - 22)
+                .sizeTexture(16, 16)
+                .render(graphics);
     }
 
     /**
-     * TODO PR : JDT#516
-     * <br/>
-     * <br/>
-     * https://github.com/Direwolf20-MC/JustDireThings/pull/516
-     * <br/>
-     * <br/>
      * <strong>Brute force override</strong> of the title sprite
      * <br/>
      * <br/>
