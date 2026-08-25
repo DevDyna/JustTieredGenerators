@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.direwolf20.justdirethings.client.screens.GeneratorFluidT1Screen;
+import com.direwolf20.justdirethings.client.screens.GeneratorT1Screen;
 import com.direwolf20.justdirethings.common.blocks.resources.CoalBlock_T1;
 import com.direwolf20.justdirethings.common.fluids.basefluids.RefinedFuel;
 import com.direwolf20.justdirethings.common.items.resources.Coal_T1;
@@ -24,12 +26,19 @@ import com.synergy.justtieredgens.compat.jei.categories.fluid.EclipseAlloyFluidG
 import com.synergy.justtieredgens.compat.jei.categories.fluid.FerricoreFluidGenCategory;
 import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 import com.synergy.justtieredgens.compat.jei.utils.FuelUtils;
+import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
 import com.synergy.justtieredgens.init.types.zBlocks;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.RecipeType;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -98,8 +107,7 @@ public class PluginJEI implements IModPlugin {
 
     }
 
-    private void registerCoalFuels(IRecipeRegistration r, RecipeType<FuelRecords.Items> cat_type) {
-    @Override
+     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration r) {
 
         r.addRecipeClickArea(GeneratorT1Screen.class, 158, -22, 16, 16,
@@ -127,9 +135,9 @@ public class PluginJEI implements IModPlugin {
                 EclipseAlloyFluidGenCategory.TYPE);
 
     }
+   
 
-    private void registerCoalFuels(IRecipeRegistration r, IRecipeType<FuelRecords.Items> cat_type) {
-        Map<Integer, List<ItemStack>> fuels = new HashMap<>();
+private void registerCoalFuels(IRecipeRegistration r, RecipeType<FuelRecords.Items> cat_type) {        Map<Integer, List<ItemStack>> fuels = new HashMap<>();
 
         for (ItemStack stack : FuelUtils.getAllSolidFuels()) {
             int burnTime = stack.getBurnTime(null);
