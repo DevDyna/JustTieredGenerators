@@ -1,5 +1,8 @@
 package com.synergy.justtieredgens.api.templates;
 
+import static com.synergy.justtieredgens.Main.MODULE_ID;
+
+import com.devdyna.cakesticklib.api.gui.ImageGui;
 import com.direwolf20.justdirethings.client.screens.basescreens.BaseMachineScreen;
 import com.direwolf20.justdirethings.client.screens.standardbuttons.ToggleButtonFactory;
 import com.direwolf20.justdirethings.client.screens.widgets.ToggleButton;
@@ -39,6 +42,13 @@ public abstract class AbstractLargeMachineScreenLabel<T extends BaseMachineConta
         extractMachineTitle(graphics, mouseX, mouseY, partialTicks);
 
         extractGeneratorSprites(graphics, mouseX, mouseY, partialTicks);
+
+        ImageGui.of()
+                .rl(MODULE_ID, "textures/gui/slots/recipe.png")
+                .size(16, 16)
+                .offset(getLeftPos() + 158, getTopPos() - 22)
+                .sizeTexture(16, 16)
+                .render(graphics);
     }
 
     public void extractGeneratorSprites(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
