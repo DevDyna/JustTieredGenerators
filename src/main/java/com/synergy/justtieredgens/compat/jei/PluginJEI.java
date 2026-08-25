@@ -99,6 +99,36 @@ public class PluginJEI implements IModPlugin {
     }
 
     private void registerCoalFuels(IRecipeRegistration r, RecipeType<FuelRecords.Items> cat_type) {
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration r) {
+
+        r.addRecipeClickArea(GeneratorT1Screen.class, 158, -22, 16, 16,
+                FerricoreCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(GeneratorFluidT1Screen.class, 158, -22, 16, 16,
+                FerricoreFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(BlazeGoldCoalGenScreen.class, 158, -22, 16, 16,
+                BlazeGoldCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(BlazeGoldFluidGenScreen.class, 158, -22, 16, 16,
+                BlazeGoldFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(CelestigemCoalGenScreen.class, 158, -22, 16, 16,
+                CelestigemCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(CelestigemFluidGenScreen.class, 158, -22, 16, 16,
+                CelestigemFluidGenCategory.TYPE);
+
+        r.addRecipeClickArea(EclipseAlloyCoalGenScreen.class, 158, -22, 16, 16,
+                EclipseAlloyCoalGenCategory.TYPE);
+
+        r.addRecipeClickArea(EclipseAlloyFluidGenScreen.class, 158, -22, 16, 16,
+                EclipseAlloyFluidGenCategory.TYPE);
+
+    }
+
+    private void registerCoalFuels(IRecipeRegistration r, IRecipeType<FuelRecords.Items> cat_type) {
         Map<Integer, List<ItemStack>> fuels = new HashMap<>();
 
         for (ItemStack stack : FuelUtils.getAllSolidFuels()) {
