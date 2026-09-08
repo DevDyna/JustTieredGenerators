@@ -75,7 +75,7 @@ public class Config {
                 pocketGen();
                 misc();
 
-                c.registerConfig(ModConfig.Type.COMMON, qCOMMON.build());
+                c.registerConfig(ModConfig.Type.SERVER, BUILDER.build());
         }
 
         private static void solidGen() {
