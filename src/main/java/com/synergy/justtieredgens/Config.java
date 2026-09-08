@@ -66,7 +66,7 @@ public class Config {
 
         public static BooleanValue ENABLE_ALL_JEI_FUELS;
 
-        private static final ModConfigSpec.Builder qCOMMON = new ModConfigSpec.Builder();
+        private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
         public static void register(ModContainer c) {
 
@@ -79,7 +79,7 @@ public class Config {
         }
 
         private static void solidGen() {
-                qCOMMON.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
+                BUILDER.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
 
                 SolidGen.BlazeGold.MAX_FE = number("Max FE energy storage",
                                 Constants.BLAZEGOLD.COAL + "_max_fe", 1_000_000 * 8);
@@ -93,9 +93,9 @@ public class Config {
                 SolidGen.BlazeGold.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.BLAZEGOLD.COAL + "_burn_speed_multiplier", 4 * 2);
 
-                qCOMMON.pop();
+                BUILDER.pop();
 
-                qCOMMON.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
+                BUILDER.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
 
                 SolidGen.Celestigem.MAX_FE = number("Max FE energy storage",
                                 Constants.CELESTIGEM.COAL + "_max_fe", 1_000_000 * 32);
@@ -109,9 +109,9 @@ public class Config {
                 SolidGen.Celestigem.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.CELESTIGEM.COAL + "_burn_speed_multiplier", 4 * 3);
 
-                qCOMMON.pop();
+                BUILDER.pop();
 
-                qCOMMON.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
+                BUILDER.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
 
                 SolidGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
                                 Constants.ECLIPSE_ALLOY.COAL + "_max_fe", 1_000_000 * 128);
@@ -126,11 +126,11 @@ public class Config {
                                 "Multiplier to increase generator speed value",
                                 Constants.ECLIPSE_ALLOY.COAL + "_burn_speed_multiplier", 4 * 4);
 
-                qCOMMON.pop();
+                BUILDER.pop();
         }
 
         private static void fluidGen() {
-                qCOMMON.comment("BlazeGold Fluid Generator").push(Constants.BLAZEGOLD.FLUID);
+                BUILDER.comment("BlazeGold Fluid Generator").push(Constants.BLAZEGOLD.FLUID);
 
                 FluidGen.BlazeGold.MAX_FE = number("Max FE energy storage",
                                 Constants.BLAZEGOLD.FLUID + "_max_fe", 1_000_000 * 8);
@@ -144,9 +144,9 @@ public class Config {
                 FluidGen.BlazeGold.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.BLAZEGOLD.FLUID + "_fuel_multiplier", 2);
 
-                qCOMMON.pop();
+                BUILDER.pop();
 
-                qCOMMON.comment("Celestigem Fluid Generator").push(Constants.CELESTIGEM.FLUID);
+                BUILDER.comment("Celestigem Fluid Generator").push(Constants.CELESTIGEM.FLUID);
 
                 FluidGen.Celestigem.MAX_FE = number("Max FE energy storage",
                                 Constants.CELESTIGEM.FLUID + "_max_fe", 1_000_000 * 32);
@@ -160,9 +160,9 @@ public class Config {
                 FluidGen.Celestigem.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.CELESTIGEM.FLUID + "_fuel_multiplier", 3);
 
-                qCOMMON.pop();
+                BUILDER.pop();
 
-                qCOMMON.comment("Eclipse Alloy Fluid Generator").push(Constants.ECLIPSE_ALLOY.FLUID);
+                BUILDER.comment("Eclipse Alloy Fluid Generator").push(Constants.ECLIPSE_ALLOY.FLUID);
 
                 FluidGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_max_fe", 1_000_000 * 128);
@@ -177,7 +177,7 @@ public class Config {
                                 "Multiplier to increase generator efficiency value",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fuel_multiplier", 4);
 
-                qCOMMON.pop();
+                BUILDER.pop();
         }
 
         private static void pocketGen() {
@@ -185,15 +185,15 @@ public class Config {
         }
 
         private static void misc() {
-                qCOMMON.comment("Misc").push("misc");
+                BUILDER.comment("Misc").push("misc");
 
                 ENABLE_ALL_JEI_FUELS = bool("Show only JDT fuels as valid fuels on generators jei", "show_only_coals");
 
-                qCOMMON.pop();
+                BUILDER.pop();
         }
 
         private static BooleanValue bool(String c, String k, boolean b) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .define(k, b);
         }
@@ -206,13 +206,13 @@ public class Config {
         }
 
         private static IntValue number(String c, String k, int d, int min, int max) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .defineInRange(k, d, (d < min ? d : min), (d > max ? d : max));
         }
 
         private static DoubleValue numberFloat(String c, String k, double d, double min, double max) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .defineInRange(k, d, (d < min ? d : min), (d > max ? d : max));
         }
@@ -252,11 +252,11 @@ public class Config {
 
         protected class decor {
                 protected static void complex(String s) {
-                        qCOMMON.comment(StringUtil.nameCapitalized(s));
+                        BUILDER.comment(StringUtil.nameCapitalized(s));
                 }
 
                 protected static void simple(String s) {
-                        qCOMMON.comment(s);
+                        BUILDER.comment(s);
                 }
         }
 
