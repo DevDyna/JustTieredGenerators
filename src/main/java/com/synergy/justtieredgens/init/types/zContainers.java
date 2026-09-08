@@ -3,12 +3,12 @@ package com.synergy.justtieredgens.init.types;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenGUI;
 import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenGUI;
 import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenGUI;
 import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenGUI;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;

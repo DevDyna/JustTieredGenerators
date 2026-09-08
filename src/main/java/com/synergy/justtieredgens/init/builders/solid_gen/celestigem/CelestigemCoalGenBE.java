@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.coal.celestigem;
+package com.synergy.justtieredgens.init.builders.solid_gen.celestigem;
 
 import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenBE;

@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.coal.blazegold;
+package com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy;
 
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenScreen;
@@ -6,14 +6,14 @@ import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
-public class BlazeGoldCoalGenScreen extends BaseCoalGenScreen {
+public class EclipseAlloyCoalGenScreen extends BaseCoalGenScreen {
 
-    public BlazeGoldCoalGenScreen(BaseCoalGenGUI container, Inventory inv, Component name) {
+    public EclipseAlloyCoalGenScreen(BaseCoalGenGUI container, Inventory inv, Component name) {
         super(container, inv, name);
     }
 
     public int getMultiplier() {
-        return 2;
+        return 4;
     }
 
 }

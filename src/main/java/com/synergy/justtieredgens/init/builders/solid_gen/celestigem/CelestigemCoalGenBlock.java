@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.coal.blazegold;
+package com.synergy.justtieredgens.init.builders.solid_gen.celestigem;
 
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenBlock;
 
@@ -7,20 +7,20 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BlazeGoldCoalGenBlock extends BaseCoalGenBlock<BlazeGoldCoalGenGUI> {
+public class CelestigemCoalGenBlock extends BaseCoalGenBlock<CelestigemCoalGenGUI> {
 
-    public BlazeGoldCoalGenBlock(Properties properties) {
+    public CelestigemCoalGenBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BlazeGoldCoalGenBE(pos, state);
+        return new CelestigemCoalGenBE(pos, state);
     }
 
     @Override
-    public BlazeGoldCoalGenGUI getGui(int id, Inventory inv, BlockPos pos) {
-        return new BlazeGoldCoalGenGUI(id, inv, pos);
+    public CelestigemCoalGenGUI getGui(int id, Inventory inv, BlockPos pos) {
+        return new CelestigemCoalGenGUI(id, inv, pos);
     }
 
 }

@@ -1,11 +1,11 @@
 package com.synergy.justtieredgens;
 
-import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenScreen;
 import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
 import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
 import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenScreen;
 import com.synergy.justtieredgens.init.types.zContainers;
 
 import net.neoforged.api.distmarker.Dist;

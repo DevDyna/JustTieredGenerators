@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.coal.blazegold;
+package com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy;
 
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.init.types.zBlocks;
@@ -9,18 +9,18 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.Block;
 
-public class BlazeGoldCoalGenGUI extends BaseCoalGenGUI {
+public class EclipseAlloyCoalGenGUI extends BaseCoalGenGUI {
 
-    public BlazeGoldCoalGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
+    public EclipseAlloyCoalGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
         this(windowId, playerInventory, extraData.readBlockPos());
     }
 
-    public BlazeGoldCoalGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
-        super(zContainers.BLAZEGOLD_COAL.get(), windowId, playerInventory, blockPos);
+    public EclipseAlloyCoalGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
+        super(zContainers.ECLIPSE_ALLOY_COAL.get(), windowId, playerInventory, blockPos);
     }
 
     public Block stillValid() {
-        return zBlocks.BLAZEGOLD_COAL.get();
+        return zBlocks.ECLIPSE_ALLOY_COAL.get();
     }
 
 }
