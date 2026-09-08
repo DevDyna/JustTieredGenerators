@@ -5,9 +5,9 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 import java.util.function.Function;
 
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenBlock;
-import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenBlock;
-import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenBlock;
+import com.synergy.justtieredgens.init.builders.fluid_gen.blazegold.BlazeGoldFluidGenBlock;
+import com.synergy.justtieredgens.init.builders.fluid_gen.celestigem.CelestigemFluidGenBlock;
+import com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy.EclipseAlloyFluidGenBlock;
 import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenBlock;
 import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenBlock;
 import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenBlock;

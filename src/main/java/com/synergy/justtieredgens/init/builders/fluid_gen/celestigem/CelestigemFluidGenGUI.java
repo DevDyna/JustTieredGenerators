@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy;
+package com.synergy.justtieredgens.init.builders.fluid_gen.celestigem;
 
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenGUI;
 import com.synergy.justtieredgens.init.types.zBlocks;
@@ -9,18 +9,18 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.Block;
 
-public class EclipseAlloyFluidGenGUI extends BaseFluidGenGUI {
+public class CelestigemFluidGenGUI extends BaseFluidGenGUI {
 
-    public EclipseAlloyFluidGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
+    public CelestigemFluidGenGUI(int windowId, Inventory playerInventory, FriendlyByteBuf extraData) {
         this(windowId, playerInventory, extraData.readBlockPos());
     }
 
-    public EclipseAlloyFluidGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
-        super(zContainers.ECLIPSE_ALLOY_FLUID.get(), windowId, playerInventory, blockPos);
+    public CelestigemFluidGenGUI(int windowId, Inventory playerInventory, BlockPos blockPos) {
+        super(zContainers.CELESTIGEM_FLUID.get(), windowId, playerInventory, blockPos);
     }
 
     public Block stillValid() {
-        return zBlocks.ECLIPSE_ALLOY_FLUID.get();
+        return zBlocks.CELESTIGEM_FLUID.get();
     }
 
 }

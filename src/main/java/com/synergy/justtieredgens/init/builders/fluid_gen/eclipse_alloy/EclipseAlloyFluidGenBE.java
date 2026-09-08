@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy;
+package com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy;
 
 import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenBE;

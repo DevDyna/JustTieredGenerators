@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.init.builders.fluid.blazegold;
+package com.synergy.justtieredgens.init.builders.fluid_gen.blazegold;
 
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenGUI;
 import com.synergy.justtieredgens.init.types.zBlocks;

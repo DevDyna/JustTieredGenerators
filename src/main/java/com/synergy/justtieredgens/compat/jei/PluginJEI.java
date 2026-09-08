@@ -26,9 +26,9 @@ import com.synergy.justtieredgens.compat.jei.categories.fluid.EclipseAlloyFluidG
 import com.synergy.justtieredgens.compat.jei.categories.fluid.FerricoreFluidGenCategory;
 import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 import com.synergy.justtieredgens.compat.jei.utils.FuelUtils;
-import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
-import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
-import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.blazegold.BlazeGoldFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.celestigem.CelestigemFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy.EclipseAlloyFluidGenScreen;
 import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenScreen;
 import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenScreen;
 import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenScreen;
