@@ -1,24 +1,23 @@
-package com.synergy.justtieredgens.compat.jei.categories.fluid;
+package com.synergy.justtieredgens.compat.jei.categories.fluid_gen;
 
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
 
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
-import com.synergy.justtieredgens.Config;
+import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.Constants;
 import com.synergy.justtieredgens.compat.jei.api.BaseFluidGenCategory;
 import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
-import com.synergy.justtieredgens.init.types.zBlocks;
 
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
-public class CelestigemFluidGenCategory extends BaseFluidGenCategory {
+public class FerricoreFluidGenCategory extends BaseFluidGenCategory {
     public static final IRecipeType<FuelRecords.Fluids> TYPE = IRecipeType.create(MODULE_ID,
-            Constants.CELESTIGEM.FLUID, FuelRecords.Fluids.class);
+            JDTRegistration.GeneratorFluidT1_ITEM.getId().getPath(), FuelRecords.Fluids.class);
 
-    public CelestigemFluidGenCategory(IGuiHelper guiHelper) {
+    public FerricoreFluidGenCategory(IGuiHelper guiHelper) {
         super(guiHelper);
     }
 
@@ -29,17 +28,12 @@ public class CelestigemFluidGenCategory extends BaseFluidGenCategory {
 
     @Override
     public ItemLike getGenerator() {
-        return zBlocks.CELESTIGEM_FLUID.get();
-    }
-
-    @Override
-    public int getGenMultiplier() {
-        return Config.FluidGen.Celestigem.FUEL_MULTIPLIER.get();
+        return JDTRegistration.GeneratorFluidT1_ITEM.get();
     }
 
      @Override
     public String getType() {
-        return Constants.CELESTIGEM.FLUID;
+        return Constants.FERRICORE.FLUID;
     }
 
 }

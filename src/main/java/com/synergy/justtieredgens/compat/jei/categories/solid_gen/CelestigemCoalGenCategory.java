@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.compat.jei.categories.coal;
+package com.synergy.justtieredgens.compat.jei.categories.solid_gen;
 
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
@@ -14,11 +14,11 @@ import com.synergy.justtieredgens.init.types.zBlocks;
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
-public class EclipseAlloyCoalGenCategory extends BaseCoalGenCategory {
+public class CelestigemCoalGenCategory extends BaseCoalGenCategory {
     public static final IRecipeType<FuelRecords.Items> TYPE = IRecipeType.create(MODULE_ID,
-            Constants.ECLIPSE_ALLOY.COAL, FuelRecords.Items.class);
+            Constants.CELESTIGEM.COAL, FuelRecords.Items.class);
 
-    public EclipseAlloyCoalGenCategory(IGuiHelper guiHelper) {
+    public CelestigemCoalGenCategory(IGuiHelper guiHelper) {
         super(guiHelper);
     }
 
@@ -29,22 +29,22 @@ public class EclipseAlloyCoalGenCategory extends BaseCoalGenCategory {
 
     @Override
     public ItemLike getGenerator() {
-        return zBlocks.ECLIPSE_ALLOY_COAL.get();
+        return zBlocks.CELESTIGEM_COAL.get();
     }
 
     @Override
     public int getFePerFuelTick() {
-        return Config.SolidGen.EclipseAlloy.FE_PER_FUEL_TICK.get();
+        return Config.SolidGen.Celestigem.FE_PER_FUEL_TICK.get();
     }
 
     @Override
     public int getBurnSpeed() {
-        return Config.SolidGen.EclipseAlloy.BURN_SPEED_MULTIPLIER.get();
+        return Config.SolidGen.Celestigem.BURN_SPEED_MULTIPLIER.get();
     }
 
      @Override
     public String getType() {
-        return Constants.ECLIPSE_ALLOY.COAL;
+        return Constants.CELESTIGEM.COAL;
     }
 
 }

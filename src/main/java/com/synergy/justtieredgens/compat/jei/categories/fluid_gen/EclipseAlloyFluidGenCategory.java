@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.compat.jei.categories.fluid;
+package com.synergy.justtieredgens.compat.jei.categories.fluid_gen;
 
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;

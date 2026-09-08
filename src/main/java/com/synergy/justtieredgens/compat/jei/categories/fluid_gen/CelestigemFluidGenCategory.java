@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.compat.jei.categories.fluid;
+package com.synergy.justtieredgens.compat.jei.categories.fluid_gen;
 
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
@@ -14,11 +14,11 @@ import com.synergy.justtieredgens.init.types.zBlocks;
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
-public class BlazeGoldFluidGenCategory extends BaseFluidGenCategory {
+public class CelestigemFluidGenCategory extends BaseFluidGenCategory {
     public static final IRecipeType<FuelRecords.Fluids> TYPE = IRecipeType.create(MODULE_ID,
-            Constants.BLAZEGOLD.FLUID, FuelRecords.Fluids.class);
+            Constants.CELESTIGEM.FLUID, FuelRecords.Fluids.class);
 
-    public BlazeGoldFluidGenCategory(IGuiHelper guiHelper) {
+    public CelestigemFluidGenCategory(IGuiHelper guiHelper) {
         super(guiHelper);
     }
 
@@ -29,17 +29,17 @@ public class BlazeGoldFluidGenCategory extends BaseFluidGenCategory {
 
     @Override
     public ItemLike getGenerator() {
-        return zBlocks.BLAZEGOLD_FLUID.get();
+        return zBlocks.CELESTIGEM_FLUID.get();
     }
 
     @Override
     public int getGenMultiplier() {
-        return Config.FluidGen.BlazeGold.FUEL_MULTIPLIER.get();
+        return Config.FluidGen.Celestigem.FUEL_MULTIPLIER.get();
     }
 
      @Override
     public String getType() {
-        return Constants.BLAZEGOLD.FLUID;
+        return Constants.CELESTIGEM.FLUID;
     }
 
 }
