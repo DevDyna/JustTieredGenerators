@@ -32,19 +32,14 @@ public class BlazeGoldCoalGenCategory extends BaseCoalGenCategory {
         return zBlocks.BLAZEGOLD_COAL.get();
     }
 
-    // @Override
-    // public int getMultiplier() {
-    //     return 2;
-    // }
-
     @Override
     public int getFePerFuelTick() {
-        return Config.BLAZEGOLD_COAL_FE_PER_FUEL_TICK.get();
+        return Config.SolidGen.BLAZEGOLD_COAL_FE_PER_FUEL_TICK.get();
     }
 
     @Override
     public int getBurnSpeed() {
-        return Config.BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER.get();
+        return Config.SolidGen.BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER.get();
     }
 
     @Override

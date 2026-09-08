@@ -32,19 +32,14 @@ public class CelestigemCoalGenCategory extends BaseCoalGenCategory {
         return zBlocks.CELESTIGEM_COAL.get();
     }
 
-    // @Override
-    // public int getMultiplier() {
-    //     return 3;
-    // }
-
     @Override
     public int getFePerFuelTick() {
-        return Config.CELESTIGEM_COAL_FE_PER_FUEL_TICK.get();
+        return Config.SolidGen.CELESTIGEM_COAL_FE_PER_FUEL_TICK.get();
     }
 
     @Override
     public int getBurnSpeed() {
-        return Config.CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER.get();
+        return Config.SolidGen.CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER.get();
     }
 
      @Override

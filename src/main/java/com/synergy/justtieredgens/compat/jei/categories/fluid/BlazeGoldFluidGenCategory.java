@@ -34,7 +34,7 @@ public class BlazeGoldFluidGenCategory extends BaseFluidGenCategory {
 
     @Override
     public int getGenMultiplier() {
-        return Config.BLAZEGOLD_FLUID_FUEL_MULTIPLIER.get();
+        return Config.FluidGen.BLAZEGOLD_FLUID_FUEL_MULTIPLIER.get();
     }
 
      @Override

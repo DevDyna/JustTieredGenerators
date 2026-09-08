@@ -15,22 +15,22 @@ public class CelestigemFluidGenBE extends BaseFluidGenBE {
 
     @Override
     public int getMaxEnergy() {
-        return Config.CELESTIGEM_FLUID_MAX_FE.get();
+        return Config.FluidGen.CELESTIGEM_FLUID_MAX_FE.get();
     }
 
     @Override
     public int getFEOutputPerTick() {
-        return Config.CELESTIGEM_FLUID_FE_PER_TICK.get();
+        return Config.FluidGen.CELESTIGEM_FLUID_FE_PER_TICK.get();
     }
 
     @Override
     public int getMaxMB() {
-        return Config.CELESTIGEM_FLUID_MAX_MB.get();
+        return Config.FluidGen.CELESTIGEM_FLUID_MAX_MB.get();
     }
 
     @Override
     public int getFuelMultiplier() {
-        return Config.CELESTIGEM_FLUID_FUEL_MULTIPLIER.get();
+        return Config.FluidGen.CELESTIGEM_FLUID_FUEL_MULTIPLIER.get();
     }
 
 }

@@ -15,22 +15,22 @@ public class BlazeGoldFluidGenBE extends BaseFluidGenBE {
 
     @Override
     public int getMaxEnergy() {
-        return Config.BLAZEGOLD_FLUID_MAX_FE.get();
+        return Config.FluidGen.BLAZEGOLD_FLUID_MAX_FE.get();
     }
 
     @Override
     public int getFEOutputPerTick() {
-        return Config.BLAZEGOLD_FLUID_FE_PER_TICK.get();
+        return Config.FluidGen.BLAZEGOLD_FLUID_FE_PER_TICK.get();
     }
 
     @Override
     public int getMaxMB() {
-        return Config.BLAZEGOLD_FLUID_MAX_MB.get();
+        return Config.FluidGen.BLAZEGOLD_FLUID_MAX_MB.get();
     }
 
     @Override
     public int getFuelMultiplier() {
-        return Config.BLAZEGOLD_FLUID_FUEL_MULTIPLIER.get();
+        return Config.FluidGen.BLAZEGOLD_FLUID_FUEL_MULTIPLIER.get();
     }
 
 }
