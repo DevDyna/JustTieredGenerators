@@ -34,12 +34,12 @@ public class EclipseAlloyCoalGenCategory extends BaseCoalGenCategory {
 
     @Override
     public int getFePerFuelTick() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK.get();
+        return Config.SolidGen.EclipseAlloy.FE_PER_FUEL_TICK.get();
     }
 
     @Override
     public int getBurnSpeed() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER.get();
+        return Config.SolidGen.EclipseAlloy.BURN_SPEED_MULTIPLIER.get();
     }
 
      @Override

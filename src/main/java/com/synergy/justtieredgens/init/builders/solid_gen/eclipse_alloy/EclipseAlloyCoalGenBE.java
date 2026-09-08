@@ -15,21 +15,21 @@ public class EclipseAlloyCoalGenBE extends BaseCoalGenBE {
 
     @Override
     public int getMaxEnergy() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_MAX_FE.get();
+        return Config.SolidGen.EclipseAlloy.MAX_FE.get();
     }
 
     @Override
     public int getFEPerTick() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_FE_PER_TICK.get();
+        return Config.SolidGen.EclipseAlloy.FE_PER_TICK.get();
     }
 
     @Override
     public int getFePerFuelTick() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK.get();
+        return Config.SolidGen.EclipseAlloy.FE_PER_FUEL_TICK.get();
     }
 
     public int getBurnSpeed() {
-        return Config.SolidGen.ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER.get();
+        return Config.SolidGen.EclipseAlloy.BURN_SPEED_MULTIPLIER.get();
     }
 
 }

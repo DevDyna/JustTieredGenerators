@@ -34,7 +34,7 @@ public class CelestigemFluidGenCategory extends BaseFluidGenCategory {
 
     @Override
     public int getGenMultiplier() {
-        return Config.FluidGen.CELESTIGEM_FLUID_FUEL_MULTIPLIER.get();
+        return Config.FluidGen.Celestigem.FUEL_MULTIPLIER.get();
     }
 
      @Override

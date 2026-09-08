@@ -34,7 +34,7 @@ public class EclipseAlloyFluidGenCategory extends BaseFluidGenCategory {
 
     @Override
     public int getGenMultiplier() {
-        return Config.FluidGen.ECLIPSE_ALLOY_FLUID_FUEL_MULTIPLIER.get();
+        return Config.FluidGen.EclipseAlloy.FUEL_MULTIPLIER.get();
     }
 
      @Override
