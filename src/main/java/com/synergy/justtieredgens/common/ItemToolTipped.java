@@ -27,7 +27,6 @@ public class ItemToolTipped {
                 var item = event.getItemStack();
                 var stack = item.getItem();
                 var tip = event.getToolTip();
-                // var isBlock = stack instanceof BlockItem;
                 var block = ((stack instanceof BlockItem bi) ? bi.getBlock() : null);
 
                 if ((block instanceof GeneratorT1 && !(block instanceof BaseCoalGenBlock))
