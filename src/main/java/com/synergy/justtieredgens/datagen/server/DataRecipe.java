@@ -125,7 +125,7 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
                 SmithingTransformRecipeBuilder.smithing(
                                 x.itemIngredient(JDTRegistration.TEMPLATE_BLAZEGOLD.get()),
                                 x.itemIngredient(ferri_gen),
-                                x.itemIngredient(JDTRegistration.BlazegoldIngot.get()),
+                                x.itemIngredient(JDTRegistration.BlazeGoldBlock.get()),
                                 RecipeCategory.MISC, blaze_gen.asItem())
                                 .unlocks(getHasName(ferri_gen), has(ferri_gen))
                                 .save(output, getConversionRecipeName(blaze_gen, ferri_gen));
@@ -133,7 +133,7 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
                 SmithingTransformRecipeBuilder.smithing(
                                 x.itemIngredient(JDTRegistration.TEMPLATE_CELESTIGEM.get()),
                                 x.itemIngredient(blaze_gen),
-                                x.itemIngredient(JDTRegistration.Celestigem.get()),
+                                x.itemIngredient(JDTRegistration.CelestigemBlock.get()),
                                 RecipeCategory.MISC, celest_gen.asItem())
                                 .unlocks(getHasName(blaze_gen), has(blaze_gen))
                                 .save(output, getConversionRecipeName(celest_gen, blaze_gen));
@@ -141,7 +141,7 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
                 SmithingTransformRecipeBuilder.smithing(
                                 x.itemIngredient(JDTRegistration.TEMPLATE_ECLIPSEALLOY.get()),
                                 x.itemIngredient(celest_gen),
-                                x.itemIngredient(JDTRegistration.EclipseAlloyIngot.get()),
+                                x.itemIngredient(JDTRegistration.EclipseAlloyBlock.get()),
                                 RecipeCategory.MISC, eclipse_gen.asItem())
                                 .unlocks(getHasName(celest_gen), has(celest_gen))
                                 .save(output, getConversionRecipeName(eclipse_gen, celest_gen));
