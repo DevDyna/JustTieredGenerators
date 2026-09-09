@@ -9,6 +9,7 @@ import com.devdyna.cakesticklib.api.compat.jei.BaseCategory;
 import com.devdyna.cakesticklib.api.compat.jei.ImageJei;
 import com.devdyna.cakesticklib.api.primitive.Pos;
 import com.devdyna.cakesticklib.api.primitive.Size;
+import com.devdyna.cakesticklib.api.utils.ClientUtils;
 import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.util.MagicHelpers;
 
@@ -101,7 +102,7 @@ public abstract class BaseGenCategory<T> extends BaseCategory<T> {
 
         guiGraphics.text(font,
                 isFluid() ? "1 mb every tick"
-                        : (hasShiftDown()
+                        : (ClientUtils.hasShiftDown()
                                 ? MagicHelpers.ticksInSeconds(getTime(recipe))
                                         + " sec"
                                 : getTime(recipe) + " tick" + (getTime(recipe) > 1 ? "s" : "")),
@@ -109,13 +110,13 @@ public abstract class BaseGenCategory<T> extends BaseCategory<T> {
                 0xFFFFFFFF);
 
         guiGraphics.text(font,
-                (hasShiftDown()
+                (ClientUtils.hasShiftDown()
                         ? MagicHelpers.withSuffix(getRate(recipe))
                         : getRate(recipe)) + " FE/tick",
                 46, 18, 0xFFFFFFFF);
 
         guiGraphics.text(font,
-                (hasShiftDown()
+                (ClientUtils.hasShiftDown()
                         ? MagicHelpers.withSuffix(getTotal(recipe))
                         : getTotal(recipe)) + " FE",
                 46,
