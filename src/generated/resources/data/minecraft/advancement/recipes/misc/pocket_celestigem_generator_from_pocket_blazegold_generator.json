@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blast_furnace": {
+    "has_pocket_blazegold_generator": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:blast_furnace"
+            "items": "justtieredgens:pocket_blazegold_generator"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "justtieredgens:blazegold_coal_generator_alt"
+        "recipe": "minecraft:pocket_celestigem_generator_from_pocket_blazegold_generator"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blast_furnace"
+      "has_pocket_blazegold_generator"
     ]
   ],
   "rewards": {
     "recipes": [
-      "justtieredgens:blazegold_coal_generator_alt"
+      "minecraft:pocket_celestigem_generator_from_pocket_blazegold_generator"
     ]
   }
 }

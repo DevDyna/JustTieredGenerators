@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "justtieredgens:item/pocket_generator_t3"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "justtieredgens:item/pocket_generator_t3_active"
+    },
+    "property": "justdirethings:tool_enabled"
+  }
+}
