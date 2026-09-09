@@ -6,7 +6,9 @@ import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.Nullable;
 
+import com.direwolf20.justdirethings.setup.Registration;
 import com.synergy.justtieredgens.init.types.zBlocks;
+import com.synergy.justtieredgens.init.types.zTags;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -24,6 +26,20 @@ public class DataBlockTag extends BlockTagsProvider {
     @Override
     protected void addTags(Provider p) {
         zBlocks.zBlockItem.getEntries().forEach(b -> tag(BlockTags.MINEABLE_WITH_PICKAXE).add(b.get()));
+
+        tag(zTags.Blocks.SOLID_GENERATORS)
+                .add(
+                        Registration.GeneratorT1.get(),
+                        zBlocks.BLAZEGOLD_COAL.get(),
+                        zBlocks.CELESTIGEM_COAL.get(),
+                        zBlocks.ECLIPSE_ALLOY_COAL.get());
+
+        tag(zTags.Blocks.FLUID_GENERATORS)
+                .add(
+                        Registration.GeneratorFluidT1.get(),
+                        zBlocks.BLAZEGOLD_FLUID.get(),
+                        zBlocks.CELESTIGEM_FLUID.get(),
+                        zBlocks.ECLIPSE_ALLOY_FLUID.get());
 
     }
 

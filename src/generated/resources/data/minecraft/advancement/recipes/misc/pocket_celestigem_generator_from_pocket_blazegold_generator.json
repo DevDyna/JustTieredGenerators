@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pocket_blazegold_generator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "justtieredgens:pocket_blazegold_generator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pocket_celestigem_generator_from_pocket_blazegold_generator"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pocket_blazegold_generator"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pocket_celestigem_generator_from_pocket_blazegold_generator"
+    ]
+  }
+}

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
+import com.synergy.justtieredgens.datagen.client.DataLang;
 import com.synergy.justtieredgens.datagen.server.*;
 
 import net.minecraft.core.HolderLookup;
@@ -33,7 +34,7 @@ public class Controller {
 
         // providerGen(e, g, new DataBlockModelState(po, f));
         // e.addProvider(new DataModel(output));
-        // e.addProvider(new DataLang(output));
+        e.addProvider(new DataLang(output));
 
         // server
 

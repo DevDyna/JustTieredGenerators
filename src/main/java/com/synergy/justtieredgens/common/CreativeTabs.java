@@ -1,5 +1,7 @@
 package com.synergy.justtieredgens.common;
 
+import java.util.List;
+
 import com.direwolf20.justdirethings.setup.ModSetup;
 import com.synergy.justtieredgens.init.types.zItems;
 
@@ -11,6 +13,6 @@ public class CreativeTabs {
     @SubscribeEvent
     public static void register(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == ModSetup.TAB_JUSTDIRETHINGS.getKey())
-            zItems.zBlockItem.getEntries().forEach(i->event.accept(i.get()));
+            List.of(zItems.zItem,zItems.zBlockItem).forEach(r->r.getEntries().forEach(i->event.accept(i.get())));
     }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "justdirethings:eclipsealloy_block"
+  },
+  "base": {
+    "item": "justtieredgens:pocket_celestigem_generator"
+  },
+  "result": {
+    "count": 1,
+    "id": "justtieredgens:pocket_eclipse_alloy_generator"
+  },
+  "template": {
+    "item": "justdirethings:template_eclipsealloy"
+  }
+}

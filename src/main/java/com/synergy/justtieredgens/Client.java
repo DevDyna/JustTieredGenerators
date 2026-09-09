@@ -1,11 +1,14 @@
 package com.synergy.justtieredgens;
 
-import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenScreen;
-import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenScreen;
-import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenScreen;
-import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.blazegold.BlazeGoldFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.celestigem.CelestigemFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy.EclipseAlloyFluidGenScreen;
+import com.synergy.justtieredgens.init.builders.pocket_generators.blazegold.BlazeGoldPocketGenScreen;
+import com.synergy.justtieredgens.init.builders.pocket_generators.celestigem.CelestigemPocketGenScreen;
+import com.synergy.justtieredgens.init.builders.pocket_generators.eclipse_alloy.EclipseAlloyPocketGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenScreen;
+import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenScreen;
 import com.synergy.justtieredgens.init.types.zContainers;
 
 import net.neoforged.api.distmarker.Dist;
@@ -40,6 +43,10 @@ public class Client {
         event.register(zContainers.BLAZEGOLD_FLUID.get(), BlazeGoldFluidGenScreen::new);
         event.register(zContainers.CELESTIGEM_FLUID.get(), CelestigemFluidGenScreen::new);
         event.register(zContainers.ECLIPSE_ALLOY_FLUID.get(), EclipseAlloyFluidGenScreen::new);
+
+        event.register(zContainers.BLAZEGOLD_POCKET_GEN.get(), BlazeGoldPocketGenScreen::new);
+        event.register(zContainers.CELESTIGEM_POCKET_GEN.get(), CelestigemPocketGenScreen::new);
+        event.register(zContainers.ECLIPSE_ALLOY_POCKET_GEN.get(), EclipseAlloyPocketGenScreen::new);
 
     }
 

@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens;
 
+
 import com.synergy.justtieredgens.api.StringUtil;
 
 import net.neoforged.fml.ModContainer;
@@ -7,151 +8,297 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.*;
 
+@SuppressWarnings("unused")
 public class Config {
 
-        public static IntValue BLAZEGOLD_COAL_MAX_FE;
-        public static IntValue BLAZEGOLD_COAL_FE_PER_TICK;
-        public static IntValue BLAZEGOLD_COAL_FE_PER_FUEL_TICK;
-        public static IntValue BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER;
+        public static class SolidGen {
 
-        public static IntValue CELESTIGEM_COAL_MAX_FE;
-        public static IntValue CELESTIGEM_COAL_FE_PER_TICK;
-        public static IntValue CELESTIGEM_COAL_FE_PER_FUEL_TICK;
-        public static IntValue CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER;
+                public static class BlazeGold {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
 
-        public static IntValue ECLIPSE_ALLOY_COAL_MAX_FE;
-        public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_TICK;
-        public static IntValue ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK;
-        public static IntValue ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER;
+                public static class Celestigem {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
 
-        public static IntValue BLAZEGOLD_FLUID_MAX_FE;
-        public static IntValue BLAZEGOLD_FLUID_MAX_MB;
-        public static IntValue BLAZEGOLD_FLUID_FE_PER_TICK;
-        public static IntValue BLAZEGOLD_FLUID_FUEL_MULTIPLIER;
+                public static class EclipseAlloy {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
 
-        public static IntValue CELESTIGEM_FLUID_MAX_FE;
-        public static IntValue CELESTIGEM_FLUID_MAX_MB;
-        public static IntValue CELESTIGEM_FLUID_FE_PER_TICK;
-        public static IntValue CELESTIGEM_FLUID_FUEL_MULTIPLIER;
+        }
 
-        public static IntValue ECLIPSE_ALLOY_FLUID_MAX_FE;
-        public static IntValue ECLIPSE_ALLOY_FLUID_MAX_MB;
-        public static IntValue ECLIPSE_ALLOY_FLUID_FE_PER_TICK;
-        public static IntValue ECLIPSE_ALLOY_FLUID_FUEL_MULTIPLIER;
+        public static class FluidGen {
+
+                public static class BlazeGold {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue MAX_MB;
+                        public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class Celestigem {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue MAX_MB;
+                        public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class EclipseAlloy {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue MAX_MB;
+                        public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+        }
+
+        public static class PocketGen {
+                public static class BlazeGold {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class Celestigem {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class EclipseAlloy {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+        }
 
         public static BooleanValue ENABLE_ALL_JEI_FUELS;
 
-        private static final ModConfigSpec.Builder qCOMMON = new ModConfigSpec.Builder();
+        private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
         public static void register(ModContainer c) {
 
-                qCOMMON.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
+                solidGen();
+                fluidGen();
+                pocketGen();
+                misc();
 
-                BLAZEGOLD_COAL_MAX_FE = number("Max FE energy storage",
+                c.registerConfig(ModConfig.Type.SERVER, BUILDER.build());
+        }
+
+        private static void solidGen() {
+                BUILDER.comment("BlazeGold Coal Generator").push(Constants.BLAZEGOLD.COAL);
+
+                SolidGen.BlazeGold.MAX_FE = number("Max FE energy storage",
                                 Constants.BLAZEGOLD.COAL + "_max_fe", 1_000_000 * 8);
 
-                BLAZEGOLD_COAL_FE_PER_TICK = number("FE transfer every tick",
+                SolidGen.BlazeGold.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.BLAZEGOLD.COAL + "_fe_per_tick", 1000 * 2);
 
-                BLAZEGOLD_COAL_FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                SolidGen.BlazeGold.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
                                 Constants.BLAZEGOLD.COAL + "_fe_per_fuel_tick", 15 * 2);
 
-                BLAZEGOLD_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
+                SolidGen.BlazeGold.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.BLAZEGOLD.COAL + "_burn_speed_multiplier", 4 * 2);
 
-                qCOMMON.pop();
+                                SolidGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.COAL + "_screen_multiplier", 2);
 
-                qCOMMON.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
+                BUILDER.pop();
 
-                CELESTIGEM_COAL_MAX_FE = number("Max FE energy storage",
+                BUILDER.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
+
+                SolidGen.Celestigem.MAX_FE = number("Max FE energy storage",
                                 Constants.CELESTIGEM.COAL + "_max_fe", 1_000_000 * 32);
 
-                CELESTIGEM_COAL_FE_PER_TICK = number("FE transfer every tick",
+                SolidGen.Celestigem.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.CELESTIGEM.COAL + "_fe_per_tick", 1000 * 3);
 
-                CELESTIGEM_COAL_FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                SolidGen.Celestigem.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
                                 Constants.CELESTIGEM.COAL + "_fe_per_fuel_tick", 15 * 3);
 
-                CELESTIGEM_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
+                SolidGen.Celestigem.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.CELESTIGEM.COAL + "_burn_speed_multiplier", 4 * 3);
 
-                qCOMMON.pop();
+                SolidGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.COAL + "_screen_multiplier", 3);
 
-                qCOMMON.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
+                BUILDER.pop();
 
-                ECLIPSE_ALLOY_COAL_MAX_FE = number("Max FE energy storage",
+                BUILDER.comment("Eclipse Alloy Coal Generator").push(Constants.ECLIPSE_ALLOY.COAL);
+
+                SolidGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
                                 Constants.ECLIPSE_ALLOY.COAL + "_max_fe", 1_000_000 * 128);
 
-                ECLIPSE_ALLOY_COAL_FE_PER_TICK = number("FE transfer every tick",
+                SolidGen.EclipseAlloy.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.ECLIPSE_ALLOY.COAL + "_fe_per_tick", 1000 * 4);
 
-                ECLIPSE_ALLOY_COAL_FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                SolidGen.EclipseAlloy.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
                                 Constants.ECLIPSE_ALLOY.COAL + "_fe_per_fuel_tick", 15 * 4);
 
-                ECLIPSE_ALLOY_COAL_BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
+                SolidGen.EclipseAlloy.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase generator speed value",
                                 Constants.ECLIPSE_ALLOY.COAL + "_burn_speed_multiplier", 4 * 4);
 
-                qCOMMON.pop();
+                SolidGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.COAL + "_screen_multiplier", 4);
 
-                qCOMMON.comment("BlazeGold Fluid Generator").push(Constants.BLAZEGOLD.FLUID);
+                BUILDER.pop();
+        }
 
-                BLAZEGOLD_FLUID_MAX_FE = number("Max FE energy storage",
+        private static void fluidGen() {
+                BUILDER.comment("BlazeGold Fluid Generator").push(Constants.BLAZEGOLD.FLUID);
+
+                FluidGen.BlazeGold.MAX_FE = number("Max FE energy storage",
                                 Constants.BLAZEGOLD.FLUID + "_max_fe", 1_000_000 * 8);
 
-                BLAZEGOLD_FLUID_MAX_MB = number("Max Fluid storage",
+                FluidGen.BlazeGold.MAX_MB = number("Max Fluid storage",
                                 Constants.BLAZEGOLD.FLUID + "_max_mb", 4_000 * 4);
 
-                BLAZEGOLD_FLUID_FE_PER_TICK = number("FE transfer every tick",
+                FluidGen.BlazeGold.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.BLAZEGOLD.FLUID + "_fe_per_tick", 1000 * 2);
 
-                BLAZEGOLD_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
+                FluidGen.BlazeGold.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.BLAZEGOLD.FLUID + "_fuel_multiplier", 2);
 
-                qCOMMON.pop();
+                FluidGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.FLUID + "_screen_multiplier", 2);
 
-                qCOMMON.comment("Celestigem Fluid Generator").push(Constants.CELESTIGEM.FLUID);
+                BUILDER.pop();
 
-                CELESTIGEM_FLUID_MAX_FE = number("Max FE energy storage",
+                BUILDER.comment("Celestigem Fluid Generator").push(Constants.CELESTIGEM.FLUID);
+
+                FluidGen.Celestigem.MAX_FE = number("Max FE energy storage",
                                 Constants.CELESTIGEM.FLUID + "_max_fe", 1_000_000 * 32);
 
-                CELESTIGEM_FLUID_MAX_MB = number("Max Fluid storage",
+                FluidGen.Celestigem.MAX_MB = number("Max Fluid storage",
                                 Constants.CELESTIGEM.FLUID + "_max_mb", 4_000 * 16);
 
-                CELESTIGEM_FLUID_FE_PER_TICK = number("FE transfer every tick",
+                FluidGen.Celestigem.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.CELESTIGEM.FLUID + "_fe_per_tick", 1000 * 3);
 
-                CELESTIGEM_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
+                FluidGen.Celestigem.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.CELESTIGEM.FLUID + "_fuel_multiplier", 3);
 
-                qCOMMON.pop();
+                FluidGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.FLUID + "_screen_multiplier", 3);
 
-                qCOMMON.comment("Eclipse Alloy Fluid Generator").push(Constants.ECLIPSE_ALLOY.FLUID);
+                BUILDER.pop();
 
-                ECLIPSE_ALLOY_FLUID_MAX_FE = number("Max FE energy storage",
+                BUILDER.comment("Eclipse Alloy Fluid Generator").push(Constants.ECLIPSE_ALLOY.FLUID);
+
+                FluidGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_max_fe", 1_000_000 * 128);
 
-                ECLIPSE_ALLOY_FLUID_MAX_MB = number("Max Fluid storage",
+                FluidGen.EclipseAlloy.MAX_MB = number("Max Fluid storage",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_max_mb", 4_000 * 64);
 
-                ECLIPSE_ALLOY_FLUID_FE_PER_TICK = number("FE transfer every tick",
+                FluidGen.EclipseAlloy.FE_PER_TICK = number("FE transfer every tick",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fe_per_tick", 1000 * 4);
 
-                ECLIPSE_ALLOY_FLUID_FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
+                FluidGen.EclipseAlloy.FUEL_MULTIPLIER = number(
+                                "Multiplier to increase generator efficiency value",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fuel_multiplier", 4);
 
-                qCOMMON.pop();
+                FluidGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.FLUID + "_screen_multiplier", 4);
 
-                qCOMMON.comment("Misc").push("misc");
+                BUILDER.pop();
+        }
+
+        private static void pocketGen() {
+                BUILDER.comment("Pocket BlazeGold Generator").push(Constants.BLAZEGOLD.POCKET);
+
+                PocketGen.BlazeGold.MAX_FE = number("Max FE energy storage",
+                                Constants.BLAZEGOLD.POCKET + "_max_fe", 1_000_000 * 8);
+
+                PocketGen.BlazeGold.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.BLAZEGOLD.POCKET + "_fe_per_tick", 5000 * 2);
+
+                PocketGen.BlazeGold.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.BLAZEGOLD.POCKET + "_fe_per_fuel_tick", 15 * 2);
+
+                PocketGen.BlazeGold.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.BLAZEGOLD.POCKET + "_burn_speed_multiplier", 4 * 2);
+
+                PocketGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.POCKET + "_screen_multiplier", 2);
+
+                BUILDER.pop();
+
+                BUILDER.comment("Pocket Celestigem Generator").push(Constants.CELESTIGEM.POCKET);
+
+                PocketGen.Celestigem.MAX_FE = number("Max FE energy storage",
+                                Constants.CELESTIGEM.POCKET + "_max_fe", 1_000_000 * 32);
+
+                PocketGen.Celestigem.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.CELESTIGEM.POCKET + "_fe_per_tick", 5000 * 3);
+
+                PocketGen.Celestigem.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.CELESTIGEM.POCKET + "_fe_per_fuel_tick", 15 * 3);
+
+                PocketGen.Celestigem.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.CELESTIGEM.POCKET + "_burn_speed_multiplier", 4 * 3);
+
+                PocketGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.POCKET + "_screen_multiplier", 3);
+
+                BUILDER.pop();
+
+                BUILDER.comment("Pocket Eclipse Alloy Generator").push(Constants.ECLIPSE_ALLOY.POCKET);
+
+                PocketGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_max_fe", 1_000_000 * 128);
+
+                PocketGen.EclipseAlloy.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_fe_per_tick", 5000 * 4);
+
+                PocketGen.EclipseAlloy.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_fe_per_fuel_tick", 15 * 4);
+
+                PocketGen.EclipseAlloy.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_burn_speed_multiplier", 4 * 4);
+
+                PocketGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_screen_multiplier", 4);
+
+                BUILDER.pop();
+        }
+
+        private static void misc() {
+                BUILDER.comment("Misc").push("misc");
 
                 ENABLE_ALL_JEI_FUELS = bool("Show only JDT fuels as valid fuels on generators jei", "show_only_coals");
 
-                qCOMMON.pop();
-
-                c.registerConfig(ModConfig.Type.COMMON, qCOMMON.build());
+                BUILDER.pop();
         }
 
         private static BooleanValue bool(String c, String k, boolean b) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .define(k, b);
         }
@@ -164,13 +311,13 @@ public class Config {
         }
 
         private static IntValue number(String c, String k, int d, int min, int max) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .defineInRange(k, d, (d < min ? d : min), (d > max ? d : max));
         }
 
         private static DoubleValue numberFloat(String c, String k, double d, double min, double max) {
-                return qCOMMON
+                return BUILDER
                                 .comment(c)
                                 .defineInRange(k, d, (d < min ? d : min), (d > max ? d : max));
         }
@@ -181,7 +328,6 @@ public class Config {
          * max = Double.MAX_VALUE
          */
 
-        @SuppressWarnings("unused")
         private static DoubleValue numberFloat(String c, String k, double d) {
                 return numberFloat(c, k, d, 0, Integer.MAX_VALUE);
         }
@@ -189,7 +335,6 @@ public class Config {
         /**
          * max = Double.MAX_VALUE
          */
-        @SuppressWarnings("unused")
         private static DoubleValue numberFloat(String c, String k, double d, double min) {
                 return numberFloat(c, k, d, min, Integer.MAX_VALUE);
         }
@@ -206,18 +351,17 @@ public class Config {
         /**
          * max = Integer.MAX_VALUE
          */
-        @SuppressWarnings("unused")
         private static IntValue number(String c, String k, int d, int min) {
                 return number(c, k, d, min, Integer.MAX_VALUE);
         }
 
         protected class decor {
                 protected static void complex(String s) {
-                        qCOMMON.comment(StringUtil.nameCapitalized(s));
+                        BUILDER.comment(StringUtil.nameCapitalized(s));
                 }
 
                 protected static void simple(String s) {
-                        qCOMMON.comment(s);
+                        BUILDER.comment(s);
                 }
         }
 

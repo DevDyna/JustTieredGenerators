@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "justdirethings:blazegold_block"
+  },
+  "base": {
+    "item": "justdirethings:pocket_generator"
+  },
+  "result": {
+    "count": 1,
+    "id": "justtieredgens:pocket_blazegold_generator"
+  },
+  "template": {
+    "item": "justdirethings:template_blazegold"
+  }
+}

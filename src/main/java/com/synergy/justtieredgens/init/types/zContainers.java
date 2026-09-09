@@ -3,12 +3,15 @@ package com.synergy.justtieredgens.init.types;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenGUI;
-import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenGUI;
-import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenGUI;
-import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid_gen.blazegold.BlazeGoldFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid_gen.celestigem.CelestigemFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy.EclipseAlloyFluidGenGUI;
+import com.synergy.justtieredgens.init.builders.pocket_generators.blazegold.BlazeGoldPocketGenGUI;
+import com.synergy.justtieredgens.init.builders.pocket_generators.celestigem.CelestigemPocketGenGUI;
+import com.synergy.justtieredgens.init.builders.pocket_generators.eclipse_alloy.EclipseAlloyPocketGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenGUI;
+import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenGUI;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
@@ -46,5 +49,17 @@ public class zContainers {
         public static final DeferredHolder<MenuType<?>, MenuType<EclipseAlloyFluidGenGUI>> ECLIPSE_ALLOY_FLUID = zCTNR
                         .register(Constants.ECLIPSE_ALLOY.FLUID,
                                         () -> IMenuTypeExtension.create(EclipseAlloyFluidGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<BlazeGoldPocketGenGUI>> BLAZEGOLD_POCKET_GEN = zCTNR
+                        .register(Constants.BLAZEGOLD.POCKET,
+                                        () -> IMenuTypeExtension.create(BlazeGoldPocketGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<CelestigemPocketGenGUI>> CELESTIGEM_POCKET_GEN = zCTNR
+                        .register(Constants.CELESTIGEM.POCKET,
+                                        () -> IMenuTypeExtension.create(CelestigemPocketGenGUI::new));
+
+        public static final DeferredHolder<MenuType<?>, MenuType<EclipseAlloyPocketGenGUI>> ECLIPSE_ALLOY_POCKET_GEN = zCTNR
+                        .register(Constants.ECLIPSE_ALLOY.POCKET,
+                                        () -> IMenuTypeExtension.create(EclipseAlloyPocketGenGUI::new));
 
 }

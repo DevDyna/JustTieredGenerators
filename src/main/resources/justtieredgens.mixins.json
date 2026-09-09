@@ -4,7 +4,8 @@
   "package": "com.synergy.justtieredgens.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "GeneratorsJEIScreenMixin"
+    "GeneratorsJEIScreenMixin",
+    "PocketGeneratorJEIScreenMixin"
   ],
   "client": [],
   "server": []
