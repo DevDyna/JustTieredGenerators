@@ -5,6 +5,7 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 import java.util.concurrent.CompletableFuture;
 
 import com.devdyna.cakesticklib.api.datagen.RecipeGenerators;
+import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.init.types.zBlocks;
 
@@ -15,6 +16,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 
 public class DataRecipe extends RecipeProvider implements RecipeGenerators {
@@ -26,142 +28,16 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
         @Override
         protected void buildRecipes() {
 
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.BLAZEGOLD_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.BlazegoldIngot.get())
-                                .define('C', JDTRegistration.Coal_T1.get())
-                                .define('R', Tags.Items.DUSTS_GLOWSTONE)
-                                .define('B', JDTRegistration.GeneratorT1.get())
-                                .unlockedBy(getHasName(JDTRegistration.GeneratorT1.get()),
-                                                has(JDTRegistration.GeneratorT1.get()))
-                                .save(output);
 
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.CELESTIGEM_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.Celestigem.get())
-                                .define('C', JDTRegistration.Coal_T2.get())
-                                .define('R', Items.ENDER_PEARL)
-                                .define('B', zBlocks.BLAZEGOLD_COAL.get())
-                                .unlockedBy(getHasName(zBlocks.BLAZEGOLD_COAL.get()), has(zBlocks.BLAZEGOLD_COAL.get()))
-                                .save(output);
+                createSeriesGenerators(JDTRegistration.GeneratorT1.get(),
+                                zBlocks.BLAZEGOLD_COAL.get(), JDTRegistration.Coal_T1.get(),
+                                zBlocks.CELESTIGEM_COAL.get(), JDTRegistration.Coal_T2.get(),
+                                zBlocks.ECLIPSE_ALLOY_COAL.get(), JDTRegistration.Coal_T3.get());
 
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.ECLIPSE_ALLOY_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.EclipseAlloyIngot.get())
-                                .define('C', JDTRegistration.Coal_T3.get())
-                                .define('R', Items.ECHO_SHARD)
-                                .define('B', zBlocks.CELESTIGEM_COAL.get())
-                                .unlockedBy(getHasName(zBlocks.CELESTIGEM_COAL.get()),
-                                                has(zBlocks.CELESTIGEM_COAL.get()))
-                                .save(output);
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.BLAZEGOLD_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.BlazegoldIngot.get())
-                                .define('C', JDTRegistration.Coal_T1.get())
-                                .define('R', Tags.Items.DUSTS_GLOWSTONE)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.BLAZEGOLD_COAL.get().asItem(), "_alt"));
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.CELESTIGEM_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.Celestigem.get())
-                                .define('C', JDTRegistration.Coal_T2.get())
-                                .define('R', Items.ENDER_PEARL)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.CELESTIGEM_COAL.get().asItem(), "_alt"));
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.ECLIPSE_ALLOY_COAL.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.EclipseAlloyIngot.get())
-                                .define('C', JDTRegistration.Coal_T3.get())
-                                .define('R', Items.ECHO_SHARD)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.ECLIPSE_ALLOY_COAL.get().asItem(), "_alt"));
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.BLAZEGOLD_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.BlazegoldIngot.get())
-                                .define('C', JDTRegistration.POLYMORPHIC_FLUID_BUCKET.get())
-                                .define('R', Tags.Items.DUSTS_GLOWSTONE)
-                                .define('B', JDTRegistration.GeneratorFluidT1.get())
-                                .unlockedBy(getHasName(JDTRegistration.GeneratorFluidT1.get()),
-                                                has(JDTRegistration.GeneratorFluidT1.get()))
-                                .save(output);
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.CELESTIGEM_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.Celestigem.get())
-                                .define('C', JDTRegistration.PORTAL_FLUID_BUCKET.get())
-                                .define('R', Items.ENDER_PEARL)
-                                .define('B', zBlocks.BLAZEGOLD_FLUID.get())
-                                .unlockedBy(getHasName(zBlocks.BLAZEGOLD_FLUID.get()),
-                                                has(zBlocks.BLAZEGOLD_FLUID.get()))
-                                .save(output);
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.ECLIPSE_ALLOY_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.EclipseAlloyIngot.get())
-                                .define('C', JDTRegistration.TIME_FLUID_BUCKET.get())
-                                .define('R', Items.ECHO_SHARD)
-                                .define('B', zBlocks.CELESTIGEM_FLUID.get())
-                                .unlockedBy(getHasName(zBlocks.CELESTIGEM_FLUID.get()),
-                                                has(zBlocks.CELESTIGEM_FLUID.get()))
-                                .save(output);
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.BLAZEGOLD_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.BlazegoldIngot.get())
-                                .define('C', JDTRegistration.POLYMORPHIC_FLUID_BUCKET.get())
-                                .define('R', Tags.Items.DUSTS_GLOWSTONE)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.BLAZEGOLD_FLUID.get().asItem(), "_alt"));
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.CELESTIGEM_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.Celestigem.get())
-                                .define('C', JDTRegistration.PORTAL_FLUID_BUCKET.get())
-                                .define('R', Items.ENDER_PEARL)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.CELESTIGEM_FLUID.get().asItem(), "_alt"));
-
-                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, zBlocks.ECLIPSE_ALLOY_FLUID.get())
-                                .pattern("FRF")
-                                .pattern("CBC")
-                                .pattern("FRF")
-                                .define('F', JDTRegistration.EclipseAlloyIngot.get())
-                                .define('C', JDTRegistration.TIME_FLUID_BUCKET.get())
-                                .define('R', Items.ECHO_SHARD)
-                                .define('B', Items.BLAST_FURNACE)
-                                .unlockedBy(getHasName(Items.BLAST_FURNACE), has(Items.BLAST_FURNACE))
-                                .save(output, asRecipeID(zBlocks.ECLIPSE_ALLOY_FLUID.get().asItem(), "_alt"));
+                createSeriesGenerators(JDTRegistration.GeneratorFluidT1.get(),
+                                zBlocks.BLAZEGOLD_FLUID.get(), JDTRegistration.POLYMORPHIC_FLUID_BUCKET.get(),
+                                zBlocks.CELESTIGEM_FLUID.get(), JDTRegistration.PORTAL_FLUID_BUCKET.get(),
+                                zBlocks.ECLIPSE_ALLOY_FLUID.get(), JDTRegistration.TIME_FLUID_BUCKET.get());
 
         }
 
@@ -196,6 +72,46 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
         @Override
         public Provider getProvider() {
                 return registries;
+        }
+
+        private void createSeriesGenerators(ItemLike ferri_gen,
+                        ItemLike blaze_gen, ItemLike blaze_item,
+                        ItemLike celest_gen, ItemLike celest_item,
+                        ItemLike eclipse_gen, ItemLike eclipse_item) {
+
+                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, blaze_gen)
+                                .pattern("FRF")
+                                .pattern("CBC")
+                                .pattern("FRF")
+                                .define('F', JDTRegistration.BlazegoldIngot.get())
+                                .define('C', blaze_item)
+                                .define('R', Tags.Items.DUSTS_GLOWSTONE)
+                                .define('B', ferri_gen)
+                                .unlockedBy(getHasName(ferri_gen), has(ferri_gen))
+                                .save(output);
+
+                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, celest_gen)
+                                .pattern("FRF")
+                                .pattern("CBC")
+                                .pattern("FRF")
+                                .define('F', JDTRegistration.Celestigem.get())
+                                .define('C', celest_item)
+                                .define('R', Items.ENDER_PEARL)
+                                .define('B', blaze_gen)
+                                .unlockedBy(getHasName(blaze_gen), has(blaze_gen))
+                                .save(output);
+
+                ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, eclipse_gen)
+                                .pattern("FRF")
+                                .pattern("CBC")
+                                .pattern("FRF")
+                                .define('F', JDTRegistration.EclipseAlloyIngot.get())
+                                .define('C', eclipse_item)
+                                .define('R', Items.ECHO_SHARD)
+                                .define('B', celest_gen)
+                                .unlockedBy(getHasName(celest_gen), has(celest_gen))
+                                .save(output);
+
         }
 
 }
