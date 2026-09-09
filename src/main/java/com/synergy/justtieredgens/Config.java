@@ -37,7 +37,6 @@ public class Config {
                         public static IntValue SCREEN_MULTIPLIER;
                 }
 
-                
         }
 
         public static class FluidGen {
@@ -65,13 +64,33 @@ public class Config {
                         public static IntValue FUEL_MULTIPLIER;
                         public static IntValue SCREEN_MULTIPLIER;
                 }
-                
-
 
         }
 
         public static class PocketGen {
-               
+                public static class BlazeGold {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class Celestigem {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
+
+                public static class EclipseAlloy {
+                        public static IntValue MAX_FE;
+                        public static IntValue FE_PER_TICK;
+                        public static IntValue FE_PER_FUEL_TICK;
+                        public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
+                }
         }
 
         public static BooleanValue ENABLE_ALL_JEI_FUELS;
@@ -209,7 +228,65 @@ public class Config {
         }
 
         private static void pocketGen() {
+                BUILDER.comment("Pocket BlazeGold Generator").push(Constants.BLAZEGOLD.POCKET);
 
+                PocketGen.BlazeGold.MAX_FE = number("Max FE energy storage",
+                                Constants.BLAZEGOLD.POCKET + "_max_fe", 1_000_000 * 8);
+
+                PocketGen.BlazeGold.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.BLAZEGOLD.POCKET + "_fe_per_tick", 5000 * 2);
+
+                PocketGen.BlazeGold.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.BLAZEGOLD.POCKET + "_fe_per_fuel_tick", 15 * 2);
+
+                PocketGen.BlazeGold.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.BLAZEGOLD.POCKET + "_burn_speed_multiplier", 4 * 2);
+
+                PocketGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.POCKET + "_screen_multiplier", 2);
+
+                BUILDER.pop();
+
+                BUILDER.comment("Pocket Celestigem Generator").push(Constants.CELESTIGEM.POCKET);
+
+                PocketGen.Celestigem.MAX_FE = number("Max FE energy storage",
+                                Constants.CELESTIGEM.POCKET + "_max_fe", 1_000_000 * 32);
+
+                PocketGen.Celestigem.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.CELESTIGEM.POCKET + "_fe_per_tick", 5000 * 3);
+
+                PocketGen.Celestigem.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.CELESTIGEM.POCKET + "_fe_per_fuel_tick", 15 * 3);
+
+                PocketGen.Celestigem.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.CELESTIGEM.POCKET + "_burn_speed_multiplier", 4 * 3);
+
+                PocketGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.POCKET + "_screen_multiplier", 3);
+
+                BUILDER.pop();
+
+                BUILDER.comment("Pocket Eclipse Alloy Generator").push(Constants.ECLIPSE_ALLOY.POCKET);
+
+                PocketGen.EclipseAlloy.MAX_FE = number("Max FE energy storage",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_max_fe", 1_000_000 * 128);
+
+                PocketGen.EclipseAlloy.FE_PER_TICK = number("FE transfer every tick",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_fe_per_tick", 5000 * 4);
+
+                PocketGen.EclipseAlloy.FE_PER_FUEL_TICK = number("FE created per burn tick of fuel",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_fe_per_fuel_tick", 15 * 4);
+
+                PocketGen.EclipseAlloy.BURN_SPEED_MULTIPLIER = number(
+                                "Multiplier to increase pocket generator speed value",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_burn_speed_multiplier", 4 * 4);
+
+                PocketGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.POCKET + "_screen_multiplier", 4);
+
+                BUILDER.pop();
         }
 
         private static void misc() {

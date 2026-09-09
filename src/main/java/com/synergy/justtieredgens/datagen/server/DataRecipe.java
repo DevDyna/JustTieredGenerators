@@ -8,6 +8,7 @@ import com.devdyna.cakesticklib.api.datagen.RecipeGenerators;
 import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.init.types.zBlocks;
+import com.synergy.justtieredgens.init.types.zItems;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
@@ -28,6 +29,9 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
         @Override
         protected void buildRecipes() {
 
+                createPocketGenRecipes(
+                                JDTRegistration.Pocket_Generator.get(), zItems.BLAZEGOLD_POCKET_GEN.get(),
+                                zItems.CELESTIGEM_POCKET_GEN.get(), zItems.ECLIPSE_ALLOY_POCKET_GEN.get());
 
                 createSeriesGenerators(JDTRegistration.GeneratorT1.get(),
                                 zBlocks.BLAZEGOLD_COAL.get(), JDTRegistration.Coal_T1.get(),
@@ -111,6 +115,36 @@ public class DataRecipe extends RecipeProvider implements RecipeGenerators {
                                 .define('B', celest_gen)
                                 .unlockedBy(getHasName(celest_gen), has(celest_gen))
                                 .save(output);
+
+        }
+
+        private void createPocketGenRecipes(
+                        ItemLike ferri_gen, ItemLike blaze_gen,
+                        ItemLike celest_gen, ItemLike eclipse_gen) {
+
+                SmithingTransformRecipeBuilder.smithing(
+                                x.itemIngredient(JDTRegistration.TEMPLATE_BLAZEGOLD.get()),
+                                x.itemIngredient(ferri_gen),
+                                x.itemIngredient(JDTRegistration.BlazegoldIngot.get()),
+                                RecipeCategory.MISC, blaze_gen.asItem())
+                                .unlocks(getHasName(ferri_gen), has(ferri_gen))
+                                .save(output, getConversionRecipeName(blaze_gen, ferri_gen));
+
+                SmithingTransformRecipeBuilder.smithing(
+                                x.itemIngredient(JDTRegistration.TEMPLATE_CELESTIGEM.get()),
+                                x.itemIngredient(blaze_gen),
+                                x.itemIngredient(JDTRegistration.Celestigem.get()),
+                                RecipeCategory.MISC, celest_gen.asItem())
+                                .unlocks(getHasName(blaze_gen), has(blaze_gen))
+                                .save(output, getConversionRecipeName(celest_gen, blaze_gen));
+
+                SmithingTransformRecipeBuilder.smithing(
+                                x.itemIngredient(JDTRegistration.TEMPLATE_ECLIPSEALLOY.get()),
+                                x.itemIngredient(celest_gen),
+                                x.itemIngredient(JDTRegistration.EclipseAlloyIngot.get()),
+                                RecipeCategory.MISC, eclipse_gen.asItem())
+                                .unlocks(getHasName(celest_gen), has(celest_gen))
+                                .save(output, getConversionRecipeName(eclipse_gen, celest_gen));
 
         }
 

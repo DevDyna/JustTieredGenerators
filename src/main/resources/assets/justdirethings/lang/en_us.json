@@ -1,4 +1,5 @@
 {
 	"block.justdirethings.generatort1": "Ferricore Coal Generator",
-	"block.justdirethings.generatorfluidt1": "Ferricore Fuel Generator"
+	"block.justdirethings.generatorfluidt1": "Ferricore Fuel Generator",
+	"item.justdirethings.pocket_generator": "Pocket Ferricore Generator"
 }

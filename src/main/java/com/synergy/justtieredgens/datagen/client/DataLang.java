@@ -11,6 +11,7 @@ import com.devdyna.cakesticklib.api.utils.StringUtil;
 import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.Constants;
 import com.synergy.justtieredgens.init.types.zBlocks;
+import com.synergy.justtieredgens.init.types.zItems;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -28,8 +29,9 @@ public class DataLang extends LanguageProvider {
         protected void addTranslations() {
 
                 zBlocks.zBlockItem.getEntries().forEach(b -> addBlock(b, LangUtils.named(b, MODULE_ID)));
+                zItems.zItem.getEntries().forEach(b -> addItem(b, LangUtils.named(b, MODULE_ID)));
 
-                zBlocks.zBlockItem.getEntries().forEach(b -> {
+                List.of(zItems.zItem.getEntries(), zBlocks.zBlockItem.getEntries()).forEach(r -> r.forEach(b -> {
 
                         add(MODULE_ID + ".configuration." + b.getId().getPath(),
                                         LangUtils.named(b, MODULE_ID));
@@ -40,7 +42,10 @@ public class DataLang extends LanguageProvider {
                         add(MODULE_ID + ".configuration." + b.getId().getPath() + "_fe_per_tick",
                                         "FE transfer every tick");
 
-                });
+                        add(MODULE_ID + ".configuration." + b.getId().getPath() + "_screen_multiplier",
+                                        "Multiplier value on item tooltip");
+
+                }));
 
                 List.of(zBlocks.BLAZEGOLD_COAL, zBlocks.CELESTIGEM_COAL, zBlocks.ECLIPSE_ALLOY_COAL)
                                 .forEach(b -> {
@@ -75,6 +80,10 @@ public class DataLang extends LanguageProvider {
                                 "Show only JDT fuels as valid fuels on generators jei");
 
                 List.of(
+                                Constants.FERRICORE.POCKET,
+                                Constants.BLAZEGOLD.POCKET,
+                                Constants.CELESTIGEM.POCKET,
+                                Constants.ECLIPSE_ALLOY.POCKET,
 
                                 Constants.FERRICORE.COAL,
                                 Constants.BLAZEGOLD.COAL,
@@ -84,21 +93,28 @@ public class DataLang extends LanguageProvider {
                                 Constants.FERRICORE.FLUID,
                                 Constants.BLAZEGOLD.FLUID,
                                 Constants.CELESTIGEM.FLUID,
-                                Constants.ECLIPSE_ALLOY.FLUID)
-                                .forEach(s ->
+                                Constants.ECLIPSE_ALLOY.FLUID
 
-                                add(MODULE_ID + ".jei.category." + s,
-                                                StringUtil.formatToDisplay(s.replace(s.contains(Constants.Suffix.COAL)
-                                                                ? Constants.Suffix.COAL
-                                                                : Constants.Suffix.FLUID, ""))
-                                                                +
-                                                                (s.contains(Constants.Suffix.COAL)
-                                                                                ? " Solid"
-                                                                                : " Fluid")
-                                                                +
-                                                                " Generator Fuels")
+                ).forEach(s -> {
 
-                                );
+                        var type = s.contains(Constants.Prefix.POCKET)
+                                        ? Constants.Prefix.POCKET
+                                        : s.contains(Constants.Suffix.COAL)
+                                                        ? Constants.Suffix.COAL
+                                                        : Constants.Suffix.FLUID;
+
+                        add(MODULE_ID + ".jei.category." + s,
+                                        StringUtil.formatToDisplay((type.equals(Constants.Prefix.POCKET)
+                                                        ? s
+                                                        : s.replace(type, ""))
+                                                        .replace(Constants.Suffix.GENERATOR, "")) +
+                                                        (type.equals(Constants.Prefix.POCKET)
+                                                                        ? ""
+                                                                        : type.equals(Constants.Suffix.COAL)
+                                                                                        ? " Solid"
+                                                                                        : " Fluid")
+                                                        + " Fuels");
+                });
 
                 add(MODULE_ID + ".multiplier.ferricore", TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §f1x");
                 add(MODULE_ID + ".multiplier.blazegold", TipColors.ITEM_TOOLTIP + "Base fuel multiplier : §e2x");

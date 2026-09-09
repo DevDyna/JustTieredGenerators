@@ -1,4 +1,4 @@
-package com.synergy.justtieredgens.compat.jei.categories.solid_gen;
+package com.synergy.justtieredgens.compat.jei.categories.pocket_gen;
 
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
@@ -14,11 +14,11 @@ import com.synergy.justtieredgens.compat.jei.utils.FuelRecords;
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
-public class FerricoreCoalGenCategory extends BaseCoalGenCategory {
+public class FerricorePocketGenCategory extends BaseCoalGenCategory {
     public static final IRecipeType<FuelRecords.Items> TYPE = IRecipeType.create(MODULE_ID,
-            JDTRegistration.GeneratorT1_ITEM.getId().getPath(), FuelRecords.Items.class);
+            JDTRegistration.Pocket_Generator.getId().getPath(), FuelRecords.Items.class);
 
-    public FerricoreCoalGenCategory(IGuiHelper guiHelper) {
+    public FerricorePocketGenCategory(IGuiHelper guiHelper) {
         super(guiHelper);
     }
 
@@ -29,22 +29,22 @@ public class FerricoreCoalGenCategory extends BaseCoalGenCategory {
 
     @Override
     public ItemLike getGenerator() {
-        return JDTRegistration.GeneratorT1_ITEM.get();
+        return JDTRegistration.Pocket_Generator.get();
     }
 
      @Override
     public String getType() {
-        return Constants.FERRICORE.COAL;
+        return Constants.FERRICORE.POCKET;
     }
 
     @Override
     public int getFePerFuelTick() {
-        return Config.GENERATOR_T1_FE_PER_FUEL_TICK.get();
+        return Config.POCKET_GENERATOR_FE_PER_FUEL_TICK.get();
     }
 
     @Override
     public int getBurnSpeed() {
-        return Config.GENERATOR_T1_BURN_SPEED_MULTIPLIER.get();
+        return Config.POCKET_GENERATOR_BURN_SPEED_MULTIPLIER.get();
     }
 
 }
