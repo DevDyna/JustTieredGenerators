@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy;
 
+import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenScreen;
 
@@ -13,7 +14,7 @@ public class EclipseAlloyCoalGenScreen extends BaseCoalGenScreen {
     }
 
     public int getMultiplier() {
-        return 4;
+        return Config.SolidGen.EclipseAlloy.SCREEN_MULTIPLIER.get();
     }
 
 }

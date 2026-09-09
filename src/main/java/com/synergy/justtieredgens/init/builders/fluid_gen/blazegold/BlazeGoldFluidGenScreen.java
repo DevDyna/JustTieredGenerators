@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens.init.builders.fluid_gen.blazegold;
 
+import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenGUI;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenScreen;
 
@@ -14,7 +15,7 @@ public class BlazeGoldFluidGenScreen extends BaseFluidGenScreen {
 
     @Override
     public int getMultiplier() {
-        return 2;
+        return Config.FluidGen.BlazeGold.SCREEN_MULTIPLIER.get();
     }
 
 }

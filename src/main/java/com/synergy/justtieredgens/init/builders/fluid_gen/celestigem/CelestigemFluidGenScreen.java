@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens.init.builders.fluid_gen.celestigem;
 
+import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenGUI;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenScreen;
 
@@ -14,7 +15,7 @@ public class CelestigemFluidGenScreen extends BaseFluidGenScreen {
 
     @Override
     public int getMultiplier() {
-        return 3;
+        return Config.FluidGen.Celestigem.SCREEN_MULTIPLIER.get();
     }
 
 }

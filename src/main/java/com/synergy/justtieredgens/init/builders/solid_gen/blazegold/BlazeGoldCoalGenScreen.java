@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens.init.builders.solid_gen.blazegold;
 
+import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenGUI;
 import com.synergy.justtieredgens.api.factory.coal.BaseCoalGenScreen;
 
@@ -13,7 +14,7 @@ public class BlazeGoldCoalGenScreen extends BaseCoalGenScreen {
     }
 
     public int getMultiplier() {
-        return 2;
+        return Config.SolidGen.BlazeGold.SCREEN_MULTIPLIER.get();
     }
 
 }

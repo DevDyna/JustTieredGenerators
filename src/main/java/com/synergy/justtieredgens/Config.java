@@ -18,18 +18,23 @@ public class Config {
                         public static IntValue FE_PER_TICK;
                         public static IntValue FE_PER_FUEL_TICK;
                         public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
+
                 public static class Celestigem {
                         public static IntValue MAX_FE;
                         public static IntValue FE_PER_TICK;
                         public static IntValue FE_PER_FUEL_TICK;
                         public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
+
                 public static class EclipseAlloy {
                         public static IntValue MAX_FE;
                         public static IntValue FE_PER_TICK;
                         public static IntValue FE_PER_FUEL_TICK;
                         public static IntValue BURN_SPEED_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
 
                 
@@ -42,18 +47,23 @@ public class Config {
                         public static IntValue FE_PER_TICK;
                         public static IntValue MAX_MB;
                         public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
+
                 public static class Celestigem {
                         public static IntValue MAX_FE;
                         public static IntValue FE_PER_TICK;
                         public static IntValue MAX_MB;
                         public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
+
                 public static class EclipseAlloy {
                         public static IntValue MAX_FE;
                         public static IntValue FE_PER_TICK;
                         public static IntValue MAX_MB;
                         public static IntValue FUEL_MULTIPLIER;
+                        public static IntValue SCREEN_MULTIPLIER;
                 }
                 
 
@@ -93,6 +103,9 @@ public class Config {
                 SolidGen.BlazeGold.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.BLAZEGOLD.COAL + "_burn_speed_multiplier", 4 * 2);
 
+                                SolidGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.COAL + "_screen_multiplier", 2);
+
                 BUILDER.pop();
 
                 BUILDER.comment("Celestigem Coal Generator").push(Constants.CELESTIGEM.COAL);
@@ -108,6 +121,9 @@ public class Config {
 
                 SolidGen.Celestigem.BURN_SPEED_MULTIPLIER = number("Multiplier to increase generator speed value",
                                 Constants.CELESTIGEM.COAL + "_burn_speed_multiplier", 4 * 3);
+
+                SolidGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.COAL + "_screen_multiplier", 3);
 
                 BUILDER.pop();
 
@@ -125,6 +141,9 @@ public class Config {
                 SolidGen.EclipseAlloy.BURN_SPEED_MULTIPLIER = number(
                                 "Multiplier to increase generator speed value",
                                 Constants.ECLIPSE_ALLOY.COAL + "_burn_speed_multiplier", 4 * 4);
+
+                SolidGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.COAL + "_screen_multiplier", 4);
 
                 BUILDER.pop();
         }
@@ -144,6 +163,9 @@ public class Config {
                 FluidGen.BlazeGold.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.BLAZEGOLD.FLUID + "_fuel_multiplier", 2);
 
+                FluidGen.BlazeGold.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.BLAZEGOLD.FLUID + "_screen_multiplier", 2);
+
                 BUILDER.pop();
 
                 BUILDER.comment("Celestigem Fluid Generator").push(Constants.CELESTIGEM.FLUID);
@@ -159,6 +181,9 @@ public class Config {
 
                 FluidGen.Celestigem.FUEL_MULTIPLIER = number("Multiplier to increase generator efficiency value",
                                 Constants.CELESTIGEM.FLUID + "_fuel_multiplier", 3);
+
+                FluidGen.Celestigem.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.CELESTIGEM.FLUID + "_screen_multiplier", 3);
 
                 BUILDER.pop();
 
@@ -176,6 +201,9 @@ public class Config {
                 FluidGen.EclipseAlloy.FUEL_MULTIPLIER = number(
                                 "Multiplier to increase generator efficiency value",
                                 Constants.ECLIPSE_ALLOY.FLUID + "_fuel_multiplier", 4);
+
+                FluidGen.EclipseAlloy.SCREEN_MULTIPLIER = number("Multiplier value of every fuel values on item tooltip",
+                                Constants.ECLIPSE_ALLOY.FLUID + "_screen_multiplier", 4);
 
                 BUILDER.pop();
         }

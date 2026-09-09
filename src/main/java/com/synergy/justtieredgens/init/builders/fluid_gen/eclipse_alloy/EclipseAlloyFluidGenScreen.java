@@ -1,5 +1,6 @@
 package com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy;
 
+import com.synergy.justtieredgens.Config;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenGUI;
 import com.synergy.justtieredgens.api.factory.fluid.BaseFluidGenScreen;
 
@@ -14,7 +15,7 @@ public class EclipseAlloyFluidGenScreen extends BaseFluidGenScreen {
 
     @Override
     public int getMultiplier() {
-        return 4;
+        return Config.FluidGen.EclipseAlloy.SCREEN_MULTIPLIER.get();
     }
 
 }
