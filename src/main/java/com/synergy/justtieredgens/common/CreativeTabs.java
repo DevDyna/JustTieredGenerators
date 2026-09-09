@@ -12,6 +12,6 @@ public class CreativeTabs {
     @SubscribeEvent
     public static void register(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == ModSetup.TAB_JUSTDIRETHINGS.getKey())
-            CreativeTabUtils.accept(event, zItems.zBlockItem);
+            CreativeTabUtils.accept(event, zItems.zBlockItem,zItems.zItem);
     }
 }

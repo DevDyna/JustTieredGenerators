@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "justdirethings:celestigem_block",
+  "base": "justtieredgens:pocket_blazegold_generator",
+  "result": {
+    "id": "justtieredgens:pocket_celestigem_generator"
+  },
+  "template": "justdirethings:template_celestigem"
+}

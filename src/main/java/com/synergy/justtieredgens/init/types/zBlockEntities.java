@@ -4,12 +4,12 @@ import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import com.devdyna.cakesticklib.api.RegistryUtils;
 import com.synergy.justtieredgens.Constants;
-import com.synergy.justtieredgens.init.builders.coal.blazegold.BlazeGoldCoalGenBE;
-import com.synergy.justtieredgens.init.builders.coal.celestigem.CelestigemCoalGenBE;
-import com.synergy.justtieredgens.init.builders.coal.eclipse_alloy.EclipseAlloyCoalGenBE;
-import com.synergy.justtieredgens.init.builders.fluid.blazegold.BlazeGoldFluidGenBE;
-import com.synergy.justtieredgens.init.builders.fluid.celestigem.CelestigemFluidGenBE;
-import com.synergy.justtieredgens.init.builders.fluid.eclipse_alloy.EclipseAlloyFluidGenBE;
+import com.synergy.justtieredgens.init.builders.fluid_gen.blazegold.BlazeGoldFluidGenBE;
+import com.synergy.justtieredgens.init.builders.fluid_gen.celestigem.CelestigemFluidGenBE;
+import com.synergy.justtieredgens.init.builders.fluid_gen.eclipse_alloy.EclipseAlloyFluidGenBE;
+import com.synergy.justtieredgens.init.builders.solid_gen.blazegold.BlazeGoldCoalGenBE;
+import com.synergy.justtieredgens.init.builders.solid_gen.celestigem.CelestigemCoalGenBE;
+import com.synergy.justtieredgens.init.builders.solid_gen.eclipse_alloy.EclipseAlloyCoalGenBE;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;

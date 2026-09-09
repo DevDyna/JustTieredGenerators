@@ -2,13 +2,19 @@ package com.synergy.justtieredgens.common;
 
 import com.direwolf20.justdirethings.common.blockentities.GeneratorFluidT1BE;
 import com.direwolf20.justdirethings.common.blockentities.GeneratorT1BE;
+import com.direwolf20.justdirethings.common.capabilities.EnergyStorageItemStackNoReceive;
+import com.direwolf20.justdirethings.common.items.datacomponents.JustDireDataComponents;
+import com.direwolf20.justdirethings.common.items.interfaces.PoweredItem;
 import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.init.types.zBlocks;
+import com.synergy.justtieredgens.init.types.zItems;
 
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.transfer.access.ItemAccess;
+import net.neoforged.neoforge.transfer.item.ItemAccessItemHandler;
 
 public class Capability {
 
@@ -56,6 +62,23 @@ public class Capability {
                                                 ? be.getData(JDTRegistration.GENERATOR_FLUID_HANDLER)
                                                 : null,
                                 fluid_gens);
+
+                event.registerItem(Capabilities.Item.ITEM, (item, ctx) -> new ItemAccessItemHandler(
+                                ctx != null ? ctx : ItemAccess.forStack(item),
+                                JustDireDataComponents.ITEMSTACK_HANDLER.get(), 1),
+                                zItems.BLAZEGOLD_POCKET_GEN.get(),
+                                zItems.CELESTIGEM_POCKET_GEN.get(),
+                                zItems.ECLIPSE_ALLOY_POCKET_GEN.get()
+
+                );
+
+                event.registerItem(Capabilities.Energy.ITEM, (item, acc) -> new EnergyStorageItemStackNoReceive(
+                                acc != null ? acc : ItemAccess.forStack(item),
+                                (item.getItem() instanceof PoweredItem p) ? p.getMaxEnergy()
+                                                : 1000000),
+                                zItems.BLAZEGOLD_POCKET_GEN.get(),
+                                zItems.CELESTIGEM_POCKET_GEN.get(),
+                                zItems.ECLIPSE_ALLOY_POCKET_GEN.get());
 
         }
 }
