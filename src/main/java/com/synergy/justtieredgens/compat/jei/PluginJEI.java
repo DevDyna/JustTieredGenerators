@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.devdyna.cakesticklib.api.compat.jei.JEIAliasesHelper;
 import com.devdyna.cakesticklib.api.utils.x;
 import com.direwolf20.justdirethings.client.screens.GeneratorFluidT1Screen;
 import com.direwolf20.justdirethings.client.screens.GeneratorT1Screen;
@@ -42,6 +43,7 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
+import mezz.jei.api.registration.IIngredientAliasRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -165,6 +167,25 @@ public class PluginJEI implements IModPlugin {
 
                 r.addRecipeClickArea(EclipseAlloyFluidGenScreen.class, 158, -22, 16, 16,
                                 EclipseAlloyFluidGenCategory.TYPE);
+
+        }
+
+        @Override
+        public void registerIngredientAliases(IIngredientAliasRegistration r) {
+
+                List.of(JDTRegistration.GeneratorT1.get().asItem(),
+                                zBlocks.BLAZEGOLD_COAL.get().asItem(),
+                                zBlocks.CELESTIGEM_COAL.get().asItem(),
+                                zBlocks.ECLIPSE_ALLOY_COAL.get().asItem(),
+                                JDTRegistration.GeneratorFluidT1.get().asItem(),
+                                zBlocks.BLAZEGOLD_FLUID.get().asItem(),
+                                zBlocks.CELESTIGEM_FLUID.get().asItem(),
+                                zBlocks.ECLIPSE_ALLOY_FLUID.get().asItem(),
+                                JDTRegistration.Pocket_Generator.get().asItem(),
+                                zItems.BLAZEGOLD_POCKET_GEN.get().asItem(),
+                                zItems.CELESTIGEM_POCKET_GEN.get().asItem(),
+                                zItems.ECLIPSE_ALLOY_POCKET_GEN.get().asItem())
+                                .forEach(c -> r.addAlias(c, JEIAliasesHelper.Alias.ENERGY_GENERATOR.key()));
 
         }
 
