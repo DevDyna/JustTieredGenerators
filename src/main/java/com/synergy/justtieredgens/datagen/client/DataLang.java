@@ -1,25 +1,20 @@
 package com.synergy.justtieredgens.datagen.client;
 
-import static com.devdyna.cakesticklib.api.datagen.LangUtils.*;
 import static com.synergy.justtieredgens.Main.MODULE_ID;
 
 import java.util.List;
 
-import com.devdyna.cakesticklib.api.datagen.LangUtils;
+import com.devdyna.cakesticklib.api.datagen.LangGenerators;
 import com.devdyna.cakesticklib.api.datagen.LangUtils.TipColors;
 import com.devdyna.cakesticklib.api.utils.StringUtil;
-import com.direwolf20.justdirethings.setup.JDTRegistration;
 import com.synergy.justtieredgens.Constants;
 import com.synergy.justtieredgens.init.types.zBlocks;
 import com.synergy.justtieredgens.init.types.zItems;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-@SuppressWarnings("unused")
-public class DataLang extends LanguageProvider {
+public class DataLang extends LanguageProvider implements LangGenerators {
 
         public DataLang(PackOutput o) {
                 super(o, MODULE_ID, "en_us");
@@ -28,13 +23,13 @@ public class DataLang extends LanguageProvider {
         @Override
         protected void addTranslations() {
 
-                zBlocks.zBlockItem.getEntries().forEach(b -> addBlock(b, LangUtils.named(b, MODULE_ID)));
-                zItems.zItem.getEntries().forEach(b -> addItem(b, LangUtils.named(b, MODULE_ID)));
+                zBlocks.zBlockItem.getEntries().forEach(b -> addBlock(b, named(b)));
+                zItems.zItem.getEntries().forEach(b -> addItem(b, named(b)));
 
                 List.of(zItems.zItem.getEntries(), zBlocks.zBlockItem.getEntries()).forEach(r -> r.forEach(b -> {
 
                         add(MODULE_ID + ".configuration." + b.getId().getPath(),
-                                        LangUtils.named(b, MODULE_ID));
+                                        named(b));
 
                         add(MODULE_ID + ".configuration." + b.getId().getPath() + "_max_fe",
                                         "Max FE energy storage");
